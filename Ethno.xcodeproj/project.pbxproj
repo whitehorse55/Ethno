@@ -41,6 +41,7 @@
 		885812E0237EC87A00957415 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885812DF237EC87A00957415 /* NotificationService.swift */; };
 		885812E4237EC87A00957415 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 885812DD237EC87900957415 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		885812EA237ECBFE00957415 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885812E9237ECBFE00957415 /* SettingViewController.swift */; };
+		88893EC3237FBB2E00298FFE /* alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 88893EC2237FBB2E00298FFE /* alarm.mp3 */; };
 		88A217C92370A258005DEE8D /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A217C82370A258005DEE8D /* UIApplication+Extension.swift */; };
 		88A217CC2370DCC8005DEE8D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88A217CB2370DCC8005DEE8D /* AVFoundation.framework */; };
 		88BC1EDE237117570006F4D7 /* SiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BC1EDD237117570006F4D7 /* SiteViewController.swift */; };
@@ -136,6 +137,7 @@
 		885812DF237EC87A00957415 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		885812E1237EC87A00957415 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		885812E9237ECBFE00957415 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		88893EC2237FBB2E00298FFE /* alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarm.mp3; sourceTree = "<group>"; };
 		88A217C82370A258005DEE8D /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		88A217CB2370DCC8005DEE8D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		88BC1EDD237117570006F4D7 /* SiteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteViewController.swift; sourceTree = "<group>"; };
@@ -323,6 +325,7 @@
 		FD649BA01FFF732A000B7720 = {
 			isa = PBXGroup;
 			children = (
+				88893EC2237FBB2E00298FFE /* alarm.mp3 */,
 				FD649BAB1FFF732B000B7720 /* Ethno */,
 				FD649BC01FFF732B000B7720 /* EthnoTests */,
 				FD649BCB1FFF732B000B7720 /* EthnoUITests */,
@@ -551,6 +554,7 @@
 				885812A32377B47E00957415 /* Baufra.otf in Resources */,
 				FD649BB71FFF732B000B7720 /* LaunchScreen.storyboard in Resources */,
 				885812BE237A7F1A00957415 /* Cell_Announcement.xib in Resources */,
+				88893EC3237FBB2E00298FFE /* alarm.mp3 in Resources */,
 				FD649BB41FFF732B000B7720 /* Assets.xcassets in Resources */,
 				FD649BB21FFF732B000B7720 /* Main.storyboard in Resources */,
 				885812AF2378055E00957415 /* Cell_Advertise.xib in Resources */,

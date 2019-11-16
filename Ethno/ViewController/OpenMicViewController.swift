@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 import MessageUI
 
-class OpenMicViewController: UIViewController, MFMailComposeViewControllerDelegate {
+class OpenMicViewController: ViewController, MFMailComposeViewControllerDelegate {
 
     var recordingSession: AVAudioSession!
     var audioRecorder: AVAudioRecorder!
@@ -189,30 +189,3 @@ extension OpenMicViewController : AVAudioPlayerDelegate{
     }
 }
 
-extension OpenMicViewController{
-    private func setnavigationbuttons()
-    {
-           self.navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
-           self.navigationController!.navigationBar.shadowImage = UIImage()
-           self.navigationController!.navigationBar.isTranslucent = true
-           
-          let barButtonItem_call = UIBarButtonItem.itemWith(colorfulImage: UIImage(named: "calltostudio") , target:  self, action:  #selector(onclickbarbuttons))
-          let barButtonItem_sms = UIBarButtonItem.itemWith(colorfulImage: UIImage(named: "sms"), target:  self ,action:  #selector(onclickbarbuttons))
-          let barButtonItem_mic = UIBarButtonItem.itemWith(colorfulImage: UIImage(named: "openmic"), target:  self, action:  #selector(onclickbarbuttons))
-          
-          let space = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
-          space.width = 20.0
-          
-          self.navigationController?.addLogoImage(image: UIImage(named: "logo")!, navItem: self.navigationItem)
-          navigationItem.rightBarButtonItems = [barButtonItem_call, space, barButtonItem_sms, space, barButtonItem_mic]
-    }
-          
-      @objc func onclickbarbuttons(sender : UIButton)
-      {
-          
-      }
-      
-      override var prefersStatusBarHidden: Bool{
-          return true
-      }
-}

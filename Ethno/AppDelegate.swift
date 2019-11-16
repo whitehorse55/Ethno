@@ -11,6 +11,7 @@ import AVFoundation
 import AVKit
 import SideMenuController
 import OneSignal
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +19,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        
+        if UserDefaults.standard.isKeyPresentInUserDefaults(key: UserDefaultKeys.temperature.rawValue)
+        {
+
+        }else{
+            UserDefaults.standard.settemperture(value: true)
+            UserDefaults.standard.setmicon(value: true)
+        }
+       
         
         NotificationCenter.default.addObserver(self, selector: #selector(windowDidBecomeVisibleNotification(notif:)), name: NSNotification.Name("UIWindowDidBecomeVisibleNotification"), object: nil)
         
@@ -149,3 +160,31 @@ extension AppDelegate : SideMenuControllerDelegate{
 
 }
 
+
+extension AppDelegate : UNUserNotificationCenterDelegate{
+    @available(iOS 10.0, *)
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        let userInfo = response.notification.request.content.userInfo
+
+           if let customData = userInfo["customData"] as? String {
+               print("Custom data received: \(customData)")
+
+               switch response.actionIdentifier {
+               case UNNotificationDefaultActionIdentifier:
+                   // the user swiped to unlock
+                   print("Default identifier")
+
+               case "show":
+                   // the user tapped our "show more info…" button
+                   print("Show more information…")
+                   break
+
+               default:
+                   break
+               }
+           }
+
+           // you must call the completion handler when you're done
+           completionHandler()
+    }
+}

@@ -10,11 +10,12 @@ import Foundation
 import UIKit
 
 extension UIBarButtonItem {
-    class func itemWith(colorfulImage: UIImage?, target: AnyObject, action: Selector) -> UIBarButtonItem {
+    class func itemWith(colorfulImage: UIImage?, target: AnyObject, action: Selector, tag : Int) -> UIBarButtonItem {
         let button = UIButton(type: .custom)
         button.setImage(colorfulImage, for: .normal)
         button.frame = CGRect(x: 10.0, y: 0.0, width: 30.0, height: 30.0)
         button.addTarget(target, action: action, for: .touchUpInside)
+        button.tag = tag
 
         let barButtonItem = UIBarButtonItem(customView: button)
         

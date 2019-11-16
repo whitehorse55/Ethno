@@ -13,7 +13,7 @@ import WebKit
 import AVFoundation
 import AVKit
 
-class MainViewController: UIViewController {
+class MainViewController: ViewController {
     var backimgs = ["slider","slider1","slider2","slider3"]
     
     var webView: WKWebView!
@@ -80,30 +80,6 @@ extension MainViewController : HSCycleGalleryViewDelegate{
     }
 }
 
-
-extension MainViewController{
-    private func setnavigationbuttons()
-    {
-        let barButtonItem_call = UIBarButtonItem.itemWith(colorfulImage: UIImage(named: "calltostudio") , target:  self, action:  #selector(onclickbarbuttons))
-        let barButtonItem_sms = UIBarButtonItem.itemWith(colorfulImage: UIImage(named: "sms"), target:  self ,action:  #selector(onclickbarbuttons))
-        let barButtonItem_mic = UIBarButtonItem.itemWith(colorfulImage: UIImage(named: "openmic"), target:  self, action:  #selector(onclickbarbuttons))
-        
-        let space = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
-        space.width = 20.0
-        
-        self.navigationController?.addLogoImage(image: UIImage(named: "logo")!, navItem: self.navigationItem)
-        navigationItem.rightBarButtonItems = [barButtonItem_call, space, barButtonItem_sms, space, barButtonItem_mic]
-    }
-    
-    @objc func onclickbarbuttons(sender : UIButton)
-    {
-        
-    }
-    
-    override var prefersStatusBarHidden: Bool{
-        return true
-    }
-}
 
 
 extension MainViewController :  AVAudioPlayerDelegate , WKNavigationDelegate{

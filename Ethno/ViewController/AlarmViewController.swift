@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import UserNotifications
 
-class AlarmViewController: UIViewController{
+class AlarmViewController: ViewController{
 
     @IBOutlet weak var alarmtime: UILabel!
     @IBOutlet weak var alarm_switch: UISwitch!
@@ -34,8 +35,17 @@ class AlarmViewController: UIViewController{
     @IBAction func onchangevalue(_ sender: Any) {
         if alarm_switch.isOn{
             UserDefaults.standard.setalarmtime(value: alarmtime.text!)
+            UserDefaults.standard.setalarmstatus(value: true)
+            let alarmhours = getsubstring(str: self.alarmtime.text!)
+            
+            if #available(iOS 10.0, *) {
+                setalarmconfig(alarmhour: Int(alarmhours[0])! , alarmmin: Int(alarmhours[1])!)
+            } else {
+                // Fallback on earlier versions
+            }
         }else{
             UserDefaults.standard.setalarmtime(value: "")
+            UserDefaults.standard.setalarmstatus(value: false)
         }
     }
     
@@ -44,45 +54,57 @@ class AlarmViewController: UIViewController{
         if UserDefaults.standard.isKeyPresentInUserDefaults(key: UserDefaultKeys.alarmtime.rawValue)
         {
             let alarmtime = UserDefaults.standard.getalarmtime()
+            let alarmstatus = UserDefaults.standard.gettemperature()
+            self.alarmtime.text = alarmtime
+            alarm_switch.isOn = alarmstatus
+            alarm_switch.isHidden = false
             
-            if alarmtime != ""
-           {
-               self.alarmtime.text = alarmtime
-               alarm_switch.isOn = true
-             alarm_switch.isHidden = false
-           }
+            let alarmhours = getsubstring(str: alarmtime)
+            
+            if #available(iOS 10.0, *) {
+                setalarmconfig(alarmhour: Int(alarmhours[0])! , alarmmin: Int(alarmhours[1])!)
+            } else {
+                // Fallback on earlier versions
+            }
         }
       
+    }
+    
+    private func getsubstring(str : String) -> [String]
+    {
+        let sub_strs = str.components(separatedBy: ":")
+        return sub_strs
     }
 }
 
 
 
-extension AlarmViewController
-{
-    private func setnavigationbuttons()
-      {
-             self.navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
-             self.navigationController!.navigationBar.shadowImage = UIImage()
-             self.navigationController!.navigationBar.isTranslucent = true
-             
-            let barButtonItem_call = UIBarButtonItem.itemWith(colorfulImage: UIImage(named: "calltostudio") , target:  self, action:  #selector(onclickbarbuttons))
-            let barButtonItem_sms = UIBarButtonItem.itemWith(colorfulImage: UIImage(named: "sms"), target:  self ,action:  #selector(onclickbarbuttons))
-            let barButtonItem_mic = UIBarButtonItem.itemWith(colorfulImage: UIImage(named: "openmic"), target:  self, action:  #selector(onclickbarbuttons))
-            
-            let space = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
-            space.width = 20.0
-            
-            self.navigationController?.addLogoImage(image: UIImage(named: "logo")!, navItem: self.navigationItem)
-            navigationItem.rightBarButtonItems = [barButtonItem_call, space, barButtonItem_sms, space, barButtonItem_mic]
-      }
-            
-        @objc func onclickbarbuttons(sender : UIButton)
-        {
-            
+
+
+
+@available(iOS 10.0, *)
+extension AlarmViewController{
+    private func setalarmconfig(alarmhour : Int, alarmmin : Int){
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
+            if granted {
+                let content = UNMutableNotificationContent()
+                content.title = "Welcome back to Ethno"
+                content.body = ""
+                content.categoryIdentifier = "alarm"
+                content.userInfo = ["userinfo": "alarm"]
+                content.sound = UNNotificationSound.init(named: UNNotificationSoundName.init("alarm.mp3"))
+
+               var dateComponents = DateComponents()
+               dateComponents.hour = alarmhour
+               dateComponents.minute = alarmmin
+               let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+
+               let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+               center.add(request)
+            } else {
+                self.showToast(message: "LocalNotification not guranted", font: UIFont(name: "Baufra-Bold", size: 16.0)!)
+            }
         }
-        
-        override var prefersStatusBarHidden: Bool{
-            return true
-        }
+    }
 }

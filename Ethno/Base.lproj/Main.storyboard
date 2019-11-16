@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -634,16 +634,84 @@
             </objects>
             <point key="canvasLocation" x="2103" y="39"/>
         </scene>
-        <!--View Controller-->
+        <!--Setting View Controller-->
         <scene sceneID="w30-CP-qD0">
             <objects>
-                <viewController id="IWo-aT-gub" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VC_Setting" useStoryboardIdentifierAsRestorationIdentifier="YES" id="IWo-aT-gub" customClass="SettingViewController" customModule="Ethno" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rA1-ro-LgU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header_background" translatesAutoresizingMaskIntoConstraints="NO" id="buH-Is-gDm">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="403"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open Mic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rrk-fB-7DW">
+                                <rect key="frame" x="24" y="433" width="207" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="pnO-2D-Zn0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Baufra-Bold" family="Baufra" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YwG-Bx-Irh">
+                                <rect key="frame" x="301" y="433" width="85" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="PWi-W1-SFs"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="valusechangedswitch:" destination="IWo-aT-gub" eventType="valueChanged" id="wF7-2V-hF7"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature Unit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3VX-mM-bL5">
+                                <rect key="frame" x="24" y="503" width="207" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="89R-pW-O69"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Baufra-Bold" family="Baufra" pointSize="22"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="e7t-kK-euJ">
+                                <rect key="frame" x="253.5" y="503" width="130.5" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ARH-Kl-Cq4"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="C"/>
+                                    <segment title="F"/>
+                                </segments>
+                                <color key="selectedSegmentTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="valuesgementchanged:" destination="IWo-aT-gub" eventType="valueChanged" id="0Lx-gi-aXZ"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="mcs-1N-eMw" firstAttribute="trailing" secondItem="e7t-kK-euJ" secondAttribute="trailing" constant="30" id="6ut-iA-om7"/>
+                            <constraint firstItem="buH-Is-gDm" firstAttribute="top" secondItem="rA1-ro-LgU" secondAttribute="top" id="7IN-Zy-89w"/>
+                            <constraint firstItem="YwG-Bx-Irh" firstAttribute="centerY" secondItem="rrk-fB-7DW" secondAttribute="centerY" id="9v8-ge-0M7"/>
+                            <constraint firstItem="mcs-1N-eMw" firstAttribute="trailing" secondItem="buH-Is-gDm" secondAttribute="trailing" id="DHs-gi-F1l"/>
+                            <constraint firstItem="YwG-Bx-Irh" firstAttribute="width" secondItem="rA1-ro-LgU" secondAttribute="width" multiplier="0.2" id="MVQ-LF-4UY"/>
+                            <constraint firstItem="rrk-fB-7DW" firstAttribute="leading" secondItem="mcs-1N-eMw" secondAttribute="leading" constant="24" id="Nlp-Gm-vqV"/>
+                            <constraint firstItem="3VX-mM-bL5" firstAttribute="trailing" secondItem="rrk-fB-7DW" secondAttribute="trailing" id="PQM-dx-AIN"/>
+                            <constraint firstItem="rrk-fB-7DW" firstAttribute="width" secondItem="rA1-ro-LgU" secondAttribute="width" multiplier="0.5" id="Y2C-t8-VEV"/>
+                            <constraint firstItem="buH-Is-gDm" firstAttribute="height" secondItem="rA1-ro-LgU" secondAttribute="height" multiplier="0.45" id="YPW-8I-cjL"/>
+                            <constraint firstItem="e7t-kK-euJ" firstAttribute="width" secondItem="YwG-Bx-Irh" secondAttribute="width" multiplier="1.57831" id="bc4-KO-qCt"/>
+                            <constraint firstItem="buH-Is-gDm" firstAttribute="leading" secondItem="mcs-1N-eMw" secondAttribute="leading" id="mPx-mD-heh"/>
+                            <constraint firstItem="mcs-1N-eMw" firstAttribute="trailing" secondItem="YwG-Bx-Irh" secondAttribute="trailing" constant="30" id="msS-IO-bvf"/>
+                            <constraint firstItem="rrk-fB-7DW" firstAttribute="top" secondItem="buH-Is-gDm" secondAttribute="bottom" constant="30" id="o4S-eq-6Ue"/>
+                            <constraint firstItem="e7t-kK-euJ" firstAttribute="centerY" secondItem="3VX-mM-bL5" secondAttribute="centerY" id="vAU-o3-6bR"/>
+                            <constraint firstItem="3VX-mM-bL5" firstAttribute="leading" secondItem="rrk-fB-7DW" secondAttribute="leading" id="vKm-AN-ek6"/>
+                            <constraint firstItem="3VX-mM-bL5" firstAttribute="top" secondItem="rrk-fB-7DW" secondAttribute="bottom" constant="30" id="yao-CM-Ceg"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="mcs-1N-eMw"/>
                     </view>
+                    <connections>
+                        <outlet property="segment_unit" destination="e7t-kK-euJ" id="wEb-yJ-4nE"/>
+                        <outlet property="switch_mic" destination="YwG-Bx-Irh" id="vPG-fh-BuK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JNw-Rq-qeB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

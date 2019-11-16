@@ -37,6 +37,7 @@ class MenuController: UIViewController {
     
     @objc func onOpensidebar()
     {
+        self.btl_menu.reloadData()
         getLocation()
     }
     
@@ -56,6 +57,12 @@ extension MenuController :  UITableViewDataSource, UITableViewDelegate
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell_menu", for: indexPath) as! MenuTableviewCell
         cell.lb_menuitem.text = array_menu[indexPath.row]
         cell.selectionStyle = .none
+        
+        let micstatus = UserDefaults.standard.getmicon()
+        if indexPath.row == 3
+        {
+            cell.lb_menuitem.isEnabled = micstatus
+        }
         return cell
     
     }
@@ -67,7 +74,6 @@ extension MenuController
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerview = UIView(frame: CGRect(x: 10, y: 0, width: tableView.frame.width, height: 50))
-
         let labelview = UILabel(frame: CGRect(x: 30, y: 0, width: tableView.frame.width * 0.7, height: headerview.frame.height))
         labelview.text = "MENU"
         labelview.font = UIFont.init(name: "Baufra-Bold", size: 20)
@@ -82,7 +88,7 @@ extension MenuController
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        changecontentview(index: indexPath.row)
+         changecontentview(index: indexPath.row)
     }
     
     
@@ -115,8 +121,12 @@ extension MenuController
             break
 
             case 3:
-                let openmicvc : OpenMicViewController = mainstoryboard.instantiateViewController(withIdentifier: "VC_Openmic") as! OpenMicViewController
-                nav_vc = UINavigationController(rootViewController: openmicvc)
+                let micstatus = UserDefaults.standard.getmicon()
+                if micstatus == true{
+                    let openmicvc : OpenMicViewController = mainstoryboard.instantiateViewController(withIdentifier: "VC_Openmic") as! OpenMicViewController
+                    nav_vc = UINavigationController(rootViewController: openmicvc)
+                }
+                
             break
 
             case 4:
@@ -137,6 +147,11 @@ extension MenuController
             case 6:
                 let alarmvc : AlarmViewController = mainstoryboard.instantiateViewController(withIdentifier: "VC_Alarm") as! AlarmViewController
                 nav_vc = UINavigationController(rootViewController: alarmvc)
+            break
+            
+            case 7:
+                let settingvc : SettingViewController = mainstoryboard.instantiateViewController(withIdentifier: "VC_Setting") as! SettingViewController
+                nav_vc = UINavigationController(rootViewController: settingvc)
             break
             
             default:
@@ -210,7 +225,15 @@ extension MenuController {
             
             if  let temperature = data.main.temp {
                 if #available(iOS 10.0, *) {
-                    self.lb_temperature.text = self.convertTemp(temp: temperature, from: .celsius, to: .celsius)
+
+                    let unitstatus = UserDefaults.standard.gettemperature()
+                    if unitstatus == true
+                    {
+                        self.lb_temperature.text = self.convertTemp(temp: temperature, from: .celsius, to: .celsius)
+                    }else{
+                        self.lb_temperature.text = self.convertTemp(temp: temperature, from: .celsius, to: .fahrenheit)
+                    }
+                   
                 } else {
                     // Fallback on earlier versions
                 }
