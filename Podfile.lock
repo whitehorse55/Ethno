@@ -1,0 +1,42 @@
+PODS:
+  - Alamofire (4.9.0)
+  - HSCycleGalleryView (1.1.2)
+  - IQKeyboardManagerSwift (6.5.2)
+  - OneSignal (2.11.2)
+  - Realm (3.19.0):
+    - Realm/Headers (= 3.19.0)
+  - Realm/Headers (3.19.0)
+  - RealmSwift (3.19.0):
+    - Realm (= 3.19.0)
+  - SideMenuController (0.2.4)
+
+DEPENDENCIES:
+  - Alamofire
+  - HSCycleGalleryView
+  - IQKeyboardManagerSwift
+  - OneSignal (< 3.0, >= 2.6.2)
+  - RealmSwift
+  - SideMenuController
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - HSCycleGalleryView
+    - IQKeyboardManagerSwift
+    - OneSignal
+    - Realm
+    - RealmSwift
+    - SideMenuController
+
+SPEC CHECKSUMS:
+  Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
+  HSCycleGalleryView: 791af0073b6f27adcefdf57f90cf6fc633bc2ae3
+  IQKeyboardManagerSwift: c75366f1f19590e8caeae45fcd5815c9289d6099
+  OneSignal: 4e3e68bb6c29975286a2fa910cb49132bc6e20bb
+  Realm: 995d585bcf699aaff226715886c849a29dd3d07f
+  RealmSwift: 35f284a537989f2187b413e5917091948cb87a3f
+  SideMenuController: b463d2b3aa58e2afe57f57a07938fa9a647894ca
+
+PODFILE CHECKSUM: ca1c3b52d41a72719f89708ff19e2780e831f74f
+
+COCOAPODS: 1.8.3

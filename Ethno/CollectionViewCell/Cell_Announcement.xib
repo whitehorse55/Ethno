@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Baufra Demi Bold.otf">
+            <string>Baufra-DemiBold</string>
+        </array>
+        <array key="Baufra.otf">
+            <string>Baufra-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell_announce" rowHeight="100" id="KGk-i7-Jjw" customClass="Cell_Announcement" customModule="Ethno" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="479" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="479" height="100"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="T0c-Qi-vmZ">
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="5dj-HT-Tos"/>
+                            <constraint firstAttribute="height" constant="100" id="S0a-c5-hPm"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AON-9G-n8E">
+                        <rect key="frame" x="108" y="8" width="339" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="kXV-Dt-PFm"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Baufra-DemiBold" family="Baufra" pointSize="18"/>
+                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dig-oj-Zx6">
+                        <rect key="frame" x="108" y="38" width="339" height="54"/>
+                        <fontDescription key="fontDescription" name="Baufra-Regular" family="Baufra" pointSize="15"/>
+                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oq1-nR-XqU">
+                        <rect key="frame" x="447" y="38" width="24" height="24"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="24" id="ATY-Dg-K6z"/>
+                            <constraint firstAttribute="height" constant="24" id="ib7-7b-WQo"/>
+                        </constraints>
+                        <state key="normal" backgroundImage="right"/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="dig-oj-Zx6" firstAttribute="leading" secondItem="T0c-Qi-vmZ" secondAttribute="trailing" constant="8" id="4v7-JX-Hj1"/>
+                    <constraint firstItem="T0c-Qi-vmZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="9yb-Cc-6sM"/>
+                    <constraint firstItem="dig-oj-Zx6" firstAttribute="top" secondItem="AON-9G-n8E" secondAttribute="bottom" id="Cd8-hA-llB"/>
+                    <constraint firstAttribute="trailing" secondItem="oq1-nR-XqU" secondAttribute="trailing" constant="8" id="ErR-Eu-VmY"/>
+                    <constraint firstAttribute="trailing" secondItem="AON-9G-n8E" secondAttribute="trailing" constant="32" id="IkH-Y2-qcJ"/>
+                    <constraint firstItem="oq1-nR-XqU" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="N3R-TR-RGT"/>
+                    <constraint firstItem="T0c-Qi-vmZ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="WZG-Pn-TNA"/>
+                    <constraint firstItem="AON-9G-n8E" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Y5x-fQ-SpF"/>
+                    <constraint firstAttribute="bottom" secondItem="dig-oj-Zx6" secondAttribute="bottom" constant="8" id="ab8-zt-98i"/>
+                    <constraint firstItem="AON-9G-n8E" firstAttribute="leading" secondItem="T0c-Qi-vmZ" secondAttribute="trailing" constant="8" id="l9g-gE-5Vd"/>
+                    <constraint firstAttribute="trailing" secondItem="dig-oj-Zx6" secondAttribute="trailing" constant="32" id="xR1-Il-sga"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="btn_more" destination="oq1-nR-XqU" id="Zjf-HQ-QNp"/>
+                <outlet property="img_announce" destination="T0c-Qi-vmZ" id="9C4-kv-gL2"/>
+                <outlet property="lb_description" destination="dig-oj-Zx6" id="GY9-6R-ezK"/>
+                <outlet property="lb_title" destination="AON-9G-n8E" id="QMD-cw-iS6"/>
+            </connections>
+            <point key="canvasLocation" x="170" y="76"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="right" width="24" height="24"/>
+    </resources>
+</document>

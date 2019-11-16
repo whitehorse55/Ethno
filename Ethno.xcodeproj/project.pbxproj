@@ -1,0 +1,1156 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		35632FB70D7126FC4DCC7404 /* Pods_Ethno.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8658E03DC141FFED5102D056 /* Pods_Ethno.framework */; };
+		88581296237799BF00957415 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88581295237799BF00957415 /* MenuController.swift */; };
+		8858129E2377B47E00957415 /* Baufra Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8858129C2377B46F00957415 /* Baufra Bold.otf */; };
+		8858129F2377B47E00957415 /* Baufra Demi Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8858129A2377B46E00957415 /* Baufra Demi Bold.otf */; };
+		885812A02377B47E00957415 /* Baufra Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 885812982377B46E00957415 /* Baufra Light.otf */; };
+		885812A12377B47E00957415 /* Baufra Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 885812992377B46E00957415 /* Baufra Medium.otf */; };
+		885812A22377B47E00957415 /* Baufra Semi Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8858129B2377B46E00957415 /* Baufra Semi Bold.otf */; };
+		885812A32377B47E00957415 /* Baufra.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8858129D2377B46F00957415 /* Baufra.otf */; };
+		885812A62377BAA400957415 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885812A52377BAA400957415 /* UIButton+Extension.swift */; };
+		885812A82377C53200957415 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885812A72377C53200957415 /* UILabel+Extension.swift */; };
+		885812AA2377F42800957415 /* UINavigationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885812A92377F42800957415 /* UINavigationItem.swift */; };
+		885812AE2378055E00957415 /* Cell_Advertise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885812AC2378055E00957415 /* Cell_Advertise.swift */; };
+		885812AF2378055E00957415 /* Cell_Advertise.xib in Resources */ = {isa = PBXBuildFile; fileRef = 885812AD2378055E00957415 /* Cell_Advertise.xib */; };
+		885812B12378DAC600957415 /* OpenMicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885812B02378DAC600957415 /* OpenMicViewController.swift */; };
+		885812B52378DB2600957415 /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885812B42378DB2600957415 /* AlarmViewController.swift */; };
+		885812B72378F38600957415 /* SmsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885812B62378F38600957415 /* SmsViewController.swift */; };
+		885812BA237A7C9700957415 /* Model_Announcements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885812B9237A7C9700957415 /* Model_Announcements.swift */; };
+		885812BD237A7F1A00957415 /* Cell_Announcement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885812BB237A7F1A00957415 /* Cell_Announcement.swift */; };
+		885812BE237A7F1A00957415 /* Cell_Announcement.xib in Resources */ = {isa = PBXBuildFile; fileRef = 885812BC237A7F1A00957415 /* Cell_Announcement.xib */; };
+		885812C0237A85D400957415 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885812BF237A85D400957415 /* UIImageView.swift */; };
+		885812C2237A92EC00957415 /* FMWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885812C1237A92EC00957415 /* FMWebViewController.swift */; };
+		885812C5237B841600957415 /* Urlservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885812C4237B841600957415 /* Urlservice.swift */; };
+		885812C7237B86AA00957415 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885812C6237B86AA00957415 /* DataManager.swift */; };
+		885812C9237B897C00957415 /* Model_Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885812C8237B897C00957415 /* Model_Weather.swift */; };
+		885812CB237B9B5D00957415 /* Notification+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885812CA237B9B5D00957415 /* Notification+Extension.swift */; };
+		885812CD237B9F1E00957415 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885812CC237B9F1E00957415 /* UIView+Extension.swift */; };
+		885812CF237BA5C600957415 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885812CE237BA5C600957415 /* Date+Extension.swift */; };
+		885812D1237BB99000957415 /* UserDefault+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885812D0237BB99000957415 /* UserDefault+Extension.swift */; };
+		885812D3237D067900957415 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 885812D2237D067800957415 /* AVKit.framework */; };
+		885812D5237E7B0000957415 /* Model_Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885812D4237E7B0000957415 /* Model_Realm.swift */; };
+		885812D8237EB86D00957415 /* RPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885812D7237EB86D00957415 /* RPicker.swift */; };
+		885812E0237EC87A00957415 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885812DF237EC87A00957415 /* NotificationService.swift */; };
+		885812E4237EC87A00957415 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 885812DD237EC87900957415 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		885812EA237ECBFE00957415 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885812E9237ECBFE00957415 /* SettingViewController.swift */; };
+		88A217C92370A258005DEE8D /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A217C82370A258005DEE8D /* UIApplication+Extension.swift */; };
+		88A217CC2370DCC8005DEE8D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88A217CB2370DCC8005DEE8D /* AVFoundation.framework */; };
+		88BC1EDE237117570006F4D7 /* SiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BC1EDD237117570006F4D7 /* SiteViewController.swift */; };
+		891F35E911DF774034C10990 /* Pods_EthnoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E36C25D06695A8BD9685A137 /* Pods_EthnoTests.framework */; };
+		97A6770E690B63B1E5AF011D /* Pods_Ethno_EthnoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43BAE47D972116B5CF1009C2 /* Pods_Ethno_EthnoUITests.framework */; };
+		D3BACAB5D774E176128E2078 /* Pods_Ethno_OneSignalNotificationServiceExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8947EB0394A6D7BD20EB8C85 /* Pods_Ethno_OneSignalNotificationServiceExtension.framework */; };
+		FD649BAD1FFF732B000B7720 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD649BAC1FFF732B000B7720 /* AppDelegate.swift */; };
+		FD649BAF1FFF732B000B7720 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD649BAE1FFF732B000B7720 /* ViewController.swift */; };
+		FD649BB21FFF732B000B7720 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD649BB01FFF732B000B7720 /* Main.storyboard */; };
+		FD649BB41FFF732B000B7720 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD649BB31FFF732B000B7720 /* Assets.xcassets */; };
+		FD649BB71FFF732B000B7720 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD649BB51FFF732B000B7720 /* LaunchScreen.storyboard */; };
+		FD649BC21FFF732B000B7720 /* EthnoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD649BC11FFF732B000B7720 /* EthnoTests.swift */; };
+		FD649BCD1FFF732B000B7720 /* EthnoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD649BCC1FFF732B000B7720 /* EthnoUITests.swift */; };
+		FD9522B71FFF8A7300337538 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9522B61FFF8A7300337538 /* MainViewController.swift */; };
+		FD9522B91FFF8A8D00337538 /* EthnoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9522B81FFF8A8D00337538 /* EthnoViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		885812E2237EC87A00957415 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD649BA11FFF732A000B7720 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 885812DC237EC87900957415;
+			remoteInfo = OneSignalNotificationServiceExtension;
+		};
+		FD649BBE1FFF732B000B7720 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD649BA11FFF732A000B7720 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FD649BA81FFF732B000B7720;
+			remoteInfo = Ethno;
+		};
+		FD649BC91FFF732B000B7720 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD649BA11FFF732A000B7720 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FD649BA81FFF732B000B7720;
+			remoteInfo = Ethno;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		885812E8237EC87A00957415 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				885812E4237EC87A00957415 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1CC9E169BA42CC6EFD879FC9 /* Pods-Ethno-OneSignalNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ethno-OneSignalNotificationServiceExtension.debug.xcconfig"; path = "Target Support Files/Pods-Ethno-OneSignalNotificationServiceExtension/Pods-Ethno-OneSignalNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		43BAE47D972116B5CF1009C2 /* Pods_Ethno_EthnoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ethno_EthnoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		521F2736C3F053F4B29AD34F /* Pods-Ethno.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ethno.release.xcconfig"; path = "Target Support Files/Pods-Ethno/Pods-Ethno.release.xcconfig"; sourceTree = "<group>"; };
+		78A01B904A53DCFD18C950F5 /* Pods-Ethno.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ethno.debug.xcconfig"; path = "Target Support Files/Pods-Ethno/Pods-Ethno.debug.xcconfig"; sourceTree = "<group>"; };
+		8658E03DC141FFED5102D056 /* Pods_Ethno.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ethno.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		88581295237799BF00957415 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		885812982377B46E00957415 /* Baufra Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Baufra Light.otf"; sourceTree = "<group>"; };
+		885812992377B46E00957415 /* Baufra Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Baufra Medium.otf"; sourceTree = "<group>"; };
+		8858129A2377B46E00957415 /* Baufra Demi Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Baufra Demi Bold.otf"; sourceTree = "<group>"; };
+		8858129B2377B46E00957415 /* Baufra Semi Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Baufra Semi Bold.otf"; sourceTree = "<group>"; };
+		8858129C2377B46F00957415 /* Baufra Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Baufra Bold.otf"; sourceTree = "<group>"; };
+		8858129D2377B46F00957415 /* Baufra.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Baufra.otf; sourceTree = "<group>"; };
+		885812A52377BAA400957415 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		885812A72377C53200957415 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		885812A92377F42800957415 /* UINavigationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationItem.swift; sourceTree = "<group>"; };
+		885812AC2378055E00957415 /* Cell_Advertise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell_Advertise.swift; sourceTree = "<group>"; };
+		885812AD2378055E00957415 /* Cell_Advertise.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Cell_Advertise.xib; sourceTree = "<group>"; };
+		885812B02378DAC600957415 /* OpenMicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenMicViewController.swift; sourceTree = "<group>"; };
+		885812B42378DB2600957415 /* AlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
+		885812B62378F38600957415 /* SmsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsViewController.swift; sourceTree = "<group>"; };
+		885812B9237A7C9700957415 /* Model_Announcements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model_Announcements.swift; sourceTree = "<group>"; };
+		885812BB237A7F1A00957415 /* Cell_Announcement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell_Announcement.swift; sourceTree = "<group>"; };
+		885812BC237A7F1A00957415 /* Cell_Announcement.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Cell_Announcement.xib; sourceTree = "<group>"; };
+		885812BF237A85D400957415 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		885812C1237A92EC00957415 /* FMWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMWebViewController.swift; sourceTree = "<group>"; };
+		885812C4237B841600957415 /* Urlservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Urlservice.swift; sourceTree = "<group>"; };
+		885812C6237B86AA00957415 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		885812C8237B897C00957415 /* Model_Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model_Weather.swift; sourceTree = "<group>"; };
+		885812CA237B9B5D00957415 /* Notification+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extension.swift"; sourceTree = "<group>"; };
+		885812CC237B9F1E00957415 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		885812CE237BA5C600957415 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		885812D0237BB99000957415 /* UserDefault+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefault+Extension.swift"; sourceTree = "<group>"; };
+		885812D2237D067800957415 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		885812D4237E7B0000957415 /* Model_Realm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model_Realm.swift; sourceTree = "<group>"; };
+		885812D7237EB86D00957415 /* RPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RPicker.swift; sourceTree = "<group>"; };
+		885812DD237EC87900957415 /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		885812DF237EC87A00957415 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		885812E1237EC87A00957415 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		885812E9237ECBFE00957415 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		88A217C82370A258005DEE8D /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
+		88A217CB2370DCC8005DEE8D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		88BC1EDD237117570006F4D7 /* SiteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteViewController.swift; sourceTree = "<group>"; };
+		8947EB0394A6D7BD20EB8C85 /* Pods_Ethno_OneSignalNotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ethno_OneSignalNotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		931C4E2FC5793B9401CE4E32 /* Pods-EthnoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EthnoTests.release.xcconfig"; path = "Target Support Files/Pods-EthnoTests/Pods-EthnoTests.release.xcconfig"; sourceTree = "<group>"; };
+		ABB439FBE1BC9CF51F7C6905 /* Pods-Ethno-EthnoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ethno-EthnoUITests.debug.xcconfig"; path = "Target Support Files/Pods-Ethno-EthnoUITests/Pods-Ethno-EthnoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		BDFE71CC611A13BD7BAF7D4C /* Pods-Ethno-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ethno-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Target Support Files/Pods-Ethno-OneSignalNotificationServiceExtension/Pods-Ethno-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
+		DFC7490C06E197525CB9D8E8 /* Pods-EthnoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EthnoTests.debug.xcconfig"; path = "Target Support Files/Pods-EthnoTests/Pods-EthnoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E36C25D06695A8BD9685A137 /* Pods_EthnoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EthnoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F86CA32F0B70ADDE0E9693FB /* Pods-Ethno-EthnoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ethno-EthnoUITests.release.xcconfig"; path = "Target Support Files/Pods-Ethno-EthnoUITests/Pods-Ethno-EthnoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		FD649BA91FFF732B000B7720 /* Ethno.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ethno.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD649BAC1FFF732B000B7720 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FD649BAE1FFF732B000B7720 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FD649BB11FFF732B000B7720 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FD649BB31FFF732B000B7720 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FD649BB61FFF732B000B7720 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FD649BB81FFF732B000B7720 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD649BBD1FFF732B000B7720 /* EthnoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EthnoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD649BC11FFF732B000B7720 /* EthnoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthnoTests.swift; sourceTree = "<group>"; };
+		FD649BC31FFF732B000B7720 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD649BC81FFF732B000B7720 /* EthnoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EthnoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD649BCC1FFF732B000B7720 /* EthnoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthnoUITests.swift; sourceTree = "<group>"; };
+		FD649BCE1FFF732B000B7720 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD9522B61FFF8A7300337538 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		FD9522B81FFF8A8D00337538 /* EthnoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthnoViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		885812DA237EC87900957415 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3BACAB5D774E176128E2078 /* Pods_Ethno_OneSignalNotificationServiceExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD649BA61FFF732B000B7720 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88A217CC2370DCC8005DEE8D /* AVFoundation.framework in Frameworks */,
+				35632FB70D7126FC4DCC7404 /* Pods_Ethno.framework in Frameworks */,
+				885812D3237D067900957415 /* AVKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD649BBA1FFF732B000B7720 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				891F35E911DF774034C10990 /* Pods_EthnoTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD649BC51FFF732B000B7720 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97A6770E690B63B1E5AF011D /* Pods_Ethno_EthnoUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8858129223778AE300957415 /* sidemenucontroller */ = {
+			isa = PBXGroup;
+			children = (
+				88581295237799BF00957415 /* MenuController.swift */,
+			);
+			path = sidemenucontroller;
+			sourceTree = "<group>";
+		};
+		885812972377B46400957415 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8858129C2377B46F00957415 /* Baufra Bold.otf */,
+				8858129A2377B46E00957415 /* Baufra Demi Bold.otf */,
+				885812982377B46E00957415 /* Baufra Light.otf */,
+				885812992377B46E00957415 /* Baufra Medium.otf */,
+				8858129B2377B46E00957415 /* Baufra Semi Bold.otf */,
+				8858129D2377B46F00957415 /* Baufra.otf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
+		885812A42377BA8E00957415 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				885812A52377BAA400957415 /* UIButton+Extension.swift */,
+				885812A72377C53200957415 /* UILabel+Extension.swift */,
+				885812A92377F42800957415 /* UINavigationItem.swift */,
+				885812BF237A85D400957415 /* UIImageView.swift */,
+				885812CA237B9B5D00957415 /* Notification+Extension.swift */,
+				885812CC237B9F1E00957415 /* UIView+Extension.swift */,
+				885812CE237BA5C600957415 /* Date+Extension.swift */,
+				885812D0237BB99000957415 /* UserDefault+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		885812AB2378053C00957415 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				885812AC2378055E00957415 /* Cell_Advertise.swift */,
+				885812AD2378055E00957415 /* Cell_Advertise.xib */,
+				885812BB237A7F1A00957415 /* Cell_Announcement.swift */,
+				885812BC237A7F1A00957415 /* Cell_Announcement.xib */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		885812B8237A7C6A00957415 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				885812B9237A7C9700957415 /* Model_Announcements.swift */,
+				885812C8237B897C00957415 /* Model_Weather.swift */,
+				885812D4237E7B0000957415 /* Model_Realm.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		885812C3237B83F000957415 /* APIClient */ = {
+			isa = PBXGroup;
+			children = (
+				885812C4237B841600957415 /* Urlservice.swift */,
+				885812C6237B86AA00957415 /* DataManager.swift */,
+			);
+			path = APIClient;
+			sourceTree = "<group>";
+		};
+		885812D6237EB85500957415 /* CustomPicker */ = {
+			isa = PBXGroup;
+			children = (
+				885812D7237EB86D00957415 /* RPicker.swift */,
+			);
+			path = CustomPicker;
+			sourceTree = "<group>";
+		};
+		885812DE237EC87A00957415 /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXGroup;
+			children = (
+				885812DF237EC87A00957415 /* NotificationService.swift */,
+				885812E1237EC87A00957415 /* Info.plist */,
+			);
+			path = OneSignalNotificationServiceExtension;
+			sourceTree = "<group>";
+		};
+		88A217C72370A242005DEE8D /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				88A217C82370A258005DEE8D /* UIApplication+Extension.swift */,
+			);
+			path = extension;
+			sourceTree = "<group>";
+		};
+		88A217CA2370DCC8005DEE8D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				885812D2237D067800957415 /* AVKit.framework */,
+				88A217CB2370DCC8005DEE8D /* AVFoundation.framework */,
+				8658E03DC141FFED5102D056 /* Pods_Ethno.framework */,
+				43BAE47D972116B5CF1009C2 /* Pods_Ethno_EthnoUITests.framework */,
+				E36C25D06695A8BD9685A137 /* Pods_EthnoTests.framework */,
+				8947EB0394A6D7BD20EB8C85 /* Pods_Ethno_OneSignalNotificationServiceExtension.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AD0AB5691EBA14A710DEF513 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				78A01B904A53DCFD18C950F5 /* Pods-Ethno.debug.xcconfig */,
+				521F2736C3F053F4B29AD34F /* Pods-Ethno.release.xcconfig */,
+				ABB439FBE1BC9CF51F7C6905 /* Pods-Ethno-EthnoUITests.debug.xcconfig */,
+				F86CA32F0B70ADDE0E9693FB /* Pods-Ethno-EthnoUITests.release.xcconfig */,
+				DFC7490C06E197525CB9D8E8 /* Pods-EthnoTests.debug.xcconfig */,
+				931C4E2FC5793B9401CE4E32 /* Pods-EthnoTests.release.xcconfig */,
+				1CC9E169BA42CC6EFD879FC9 /* Pods-Ethno-OneSignalNotificationServiceExtension.debug.xcconfig */,
+				BDFE71CC611A13BD7BAF7D4C /* Pods-Ethno-OneSignalNotificationServiceExtension.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		FD649BA01FFF732A000B7720 = {
+			isa = PBXGroup;
+			children = (
+				FD649BAB1FFF732B000B7720 /* Ethno */,
+				FD649BC01FFF732B000B7720 /* EthnoTests */,
+				FD649BCB1FFF732B000B7720 /* EthnoUITests */,
+				885812DE237EC87A00957415 /* OneSignalNotificationServiceExtension */,
+				FD649BAA1FFF732B000B7720 /* Products */,
+				88A217CA2370DCC8005DEE8D /* Frameworks */,
+				AD0AB5691EBA14A710DEF513 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		FD649BAA1FFF732B000B7720 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FD649BA91FFF732B000B7720 /* Ethno.app */,
+				FD649BBD1FFF732B000B7720 /* EthnoTests.xctest */,
+				FD649BC81FFF732B000B7720 /* EthnoUITests.xctest */,
+				885812DD237EC87900957415 /* OneSignalNotificationServiceExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FD649BAB1FFF732B000B7720 /* Ethno */ = {
+			isa = PBXGroup;
+			children = (
+				885812D6237EB85500957415 /* CustomPicker */,
+				885812C3237B83F000957415 /* APIClient */,
+				885812B8237A7C6A00957415 /* Models */,
+				885812AB2378053C00957415 /* CollectionViewCell */,
+				885812A42377BA8E00957415 /* Extension */,
+				885812972377B46400957415 /* fonts */,
+				FD9522B51FFF8A5A00337538 /* ViewController */,
+				FD649BAE1FFF732B000B7720 /* ViewController.swift */,
+				FD649BAC1FFF732B000B7720 /* AppDelegate.swift */,
+				FD649BB01FFF732B000B7720 /* Main.storyboard */,
+				FD649BB31FFF732B000B7720 /* Assets.xcassets */,
+				FD649BB51FFF732B000B7720 /* LaunchScreen.storyboard */,
+				FD649BB81FFF732B000B7720 /* Info.plist */,
+			);
+			path = Ethno;
+			sourceTree = "<group>";
+		};
+		FD649BC01FFF732B000B7720 /* EthnoTests */ = {
+			isa = PBXGroup;
+			children = (
+				FD649BC11FFF732B000B7720 /* EthnoTests.swift */,
+				FD649BC31FFF732B000B7720 /* Info.plist */,
+			);
+			path = EthnoTests;
+			sourceTree = "<group>";
+		};
+		FD649BCB1FFF732B000B7720 /* EthnoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FD649BCC1FFF732B000B7720 /* EthnoUITests.swift */,
+				FD649BCE1FFF732B000B7720 /* Info.plist */,
+			);
+			path = EthnoUITests;
+			sourceTree = "<group>";
+		};
+		FD9522B51FFF8A5A00337538 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8858129223778AE300957415 /* sidemenucontroller */,
+				88A217C72370A242005DEE8D /* extension */,
+				FD9522B61FFF8A7300337538 /* MainViewController.swift */,
+				FD9522B81FFF8A8D00337538 /* EthnoViewController.swift */,
+				88BC1EDD237117570006F4D7 /* SiteViewController.swift */,
+				885812B02378DAC600957415 /* OpenMicViewController.swift */,
+				885812B42378DB2600957415 /* AlarmViewController.swift */,
+				885812B62378F38600957415 /* SmsViewController.swift */,
+				885812C1237A92EC00957415 /* FMWebViewController.swift */,
+				885812E9237ECBFE00957415 /* SettingViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		885812DC237EC87900957415 /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 885812E5237EC87A00957415 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */;
+			buildPhases = (
+				0BE8983FCB36532D2839A019 /* [CP] Check Pods Manifest.lock */,
+				885812D9237EC87900957415 /* Sources */,
+				885812DA237EC87900957415 /* Frameworks */,
+				885812DB237EC87900957415 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OneSignalNotificationServiceExtension;
+			productName = OneSignalNotificationServiceExtension;
+			productReference = 885812DD237EC87900957415 /* OneSignalNotificationServiceExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		FD649BA81FFF732B000B7720 /* Ethno */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD649BD11FFF732B000B7720 /* Build configuration list for PBXNativeTarget "Ethno" */;
+			buildPhases = (
+				14506BBE42B22FD175A2C067 /* [CP] Check Pods Manifest.lock */,
+				FD649BA51FFF732B000B7720 /* Sources */,
+				FD649BA61FFF732B000B7720 /* Frameworks */,
+				FD649BA71FFF732B000B7720 /* Resources */,
+				D4C078AB6C7184B28A78323B /* [CP] Embed Pods Frameworks */,
+				885812E8237EC87A00957415 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				885812E3237EC87A00957415 /* PBXTargetDependency */,
+			);
+			name = Ethno;
+			productName = Ethno;
+			productReference = FD649BA91FFF732B000B7720 /* Ethno.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FD649BBC1FFF732B000B7720 /* EthnoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD649BD41FFF732B000B7720 /* Build configuration list for PBXNativeTarget "EthnoTests" */;
+			buildPhases = (
+				9413F90989C4559B7CE8C951 /* [CP] Check Pods Manifest.lock */,
+				FD649BB91FFF732B000B7720 /* Sources */,
+				FD649BBA1FFF732B000B7720 /* Frameworks */,
+				FD649BBB1FFF732B000B7720 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FD649BBF1FFF732B000B7720 /* PBXTargetDependency */,
+			);
+			name = EthnoTests;
+			productName = EthnoTests;
+			productReference = FD649BBD1FFF732B000B7720 /* EthnoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FD649BC71FFF732B000B7720 /* EthnoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD649BD71FFF732B000B7720 /* Build configuration list for PBXNativeTarget "EthnoUITests" */;
+			buildPhases = (
+				ED710A9E46BCF9BA166DD383 /* [CP] Check Pods Manifest.lock */,
+				FD649BC41FFF732B000B7720 /* Sources */,
+				FD649BC51FFF732B000B7720 /* Frameworks */,
+				FD649BC61FFF732B000B7720 /* Resources */,
+				0D0C49761EC7FE48A583FDBE /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FD649BCA1FFF732B000B7720 /* PBXTargetDependency */,
+			);
+			name = EthnoUITests;
+			productName = EthnoUITests;
+			productReference = FD649BC81FFF732B000B7720 /* EthnoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FD649BA11FFF732A000B7720 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = Ethno;
+				TargetAttributes = {
+					885812DC237EC87900957415 = {
+						CreatedOnToolsVersion = 11.2;
+						ProvisioningStyle = Manual;
+					};
+					FD649BA81FFF732B000B7720 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Manual;
+					};
+					FD649BBC1FFF732B000B7720 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Manual;
+						TestTargetID = FD649BA81FFF732B000B7720;
+					};
+					FD649BC71FFF732B000B7720 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = FD649BA81FFF732B000B7720;
+					};
+				};
+			};
+			buildConfigurationList = FD649BA41FFF732A000B7720 /* Build configuration list for PBXProject "Ethno" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FD649BA01FFF732A000B7720;
+			productRefGroup = FD649BAA1FFF732B000B7720 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FD649BA81FFF732B000B7720 /* Ethno */,
+				FD649BBC1FFF732B000B7720 /* EthnoTests */,
+				FD649BC71FFF732B000B7720 /* EthnoUITests */,
+				885812DC237EC87900957415 /* OneSignalNotificationServiceExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		885812DB237EC87900957415 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD649BA71FFF732B000B7720 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8858129E2377B47E00957415 /* Baufra Bold.otf in Resources */,
+				8858129F2377B47E00957415 /* Baufra Demi Bold.otf in Resources */,
+				885812A02377B47E00957415 /* Baufra Light.otf in Resources */,
+				885812A12377B47E00957415 /* Baufra Medium.otf in Resources */,
+				885812A22377B47E00957415 /* Baufra Semi Bold.otf in Resources */,
+				885812A32377B47E00957415 /* Baufra.otf in Resources */,
+				FD649BB71FFF732B000B7720 /* LaunchScreen.storyboard in Resources */,
+				885812BE237A7F1A00957415 /* Cell_Announcement.xib in Resources */,
+				FD649BB41FFF732B000B7720 /* Assets.xcassets in Resources */,
+				FD649BB21FFF732B000B7720 /* Main.storyboard in Resources */,
+				885812AF2378055E00957415 /* Cell_Advertise.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD649BBB1FFF732B000B7720 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD649BC61FFF732B000B7720 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0BE8983FCB36532D2839A019 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Ethno-OneSignalNotificationServiceExtension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0D0C49761EC7FE48A583FDBE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Ethno-EthnoUITests/Pods-Ethno-EthnoUITests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/HSCycleGalleryView/HSCycleGalleryView.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SideMenuController/SideMenuController.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HSCycleGalleryView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenuController.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Ethno-EthnoUITests/Pods-Ethno-EthnoUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		14506BBE42B22FD175A2C067 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Ethno-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9413F90989C4559B7CE8C951 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EthnoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D4C078AB6C7184B28A78323B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Ethno/Pods-Ethno-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/HSCycleGalleryView/HSCycleGalleryView.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SideMenuController/SideMenuController.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HSCycleGalleryView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenuController.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Ethno/Pods-Ethno-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ED710A9E46BCF9BA166DD383 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Ethno-EthnoUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		885812D9237EC87900957415 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				885812E0237EC87A00957415 /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD649BA51FFF732B000B7720 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				885812CB237B9B5D00957415 /* Notification+Extension.swift in Sources */,
+				88581296237799BF00957415 /* MenuController.swift in Sources */,
+				885812C7237B86AA00957415 /* DataManager.swift in Sources */,
+				885812AE2378055E00957415 /* Cell_Advertise.swift in Sources */,
+				885812BA237A7C9700957415 /* Model_Announcements.swift in Sources */,
+				885812D1237BB99000957415 /* UserDefault+Extension.swift in Sources */,
+				885812CF237BA5C600957415 /* Date+Extension.swift in Sources */,
+				FD9522B71FFF8A7300337538 /* MainViewController.swift in Sources */,
+				885812A82377C53200957415 /* UILabel+Extension.swift in Sources */,
+				FD9522B91FFF8A8D00337538 /* EthnoViewController.swift in Sources */,
+				885812C9237B897C00957415 /* Model_Weather.swift in Sources */,
+				885812B52378DB2600957415 /* AlarmViewController.swift in Sources */,
+				885812CD237B9F1E00957415 /* UIView+Extension.swift in Sources */,
+				885812BD237A7F1A00957415 /* Cell_Announcement.swift in Sources */,
+				FD649BAF1FFF732B000B7720 /* ViewController.swift in Sources */,
+				885812C0237A85D400957415 /* UIImageView.swift in Sources */,
+				885812A62377BAA400957415 /* UIButton+Extension.swift in Sources */,
+				885812C2237A92EC00957415 /* FMWebViewController.swift in Sources */,
+				885812B12378DAC600957415 /* OpenMicViewController.swift in Sources */,
+				885812EA237ECBFE00957415 /* SettingViewController.swift in Sources */,
+				885812AA2377F42800957415 /* UINavigationItem.swift in Sources */,
+				885812C5237B841600957415 /* Urlservice.swift in Sources */,
+				885812D5237E7B0000957415 /* Model_Realm.swift in Sources */,
+				88BC1EDE237117570006F4D7 /* SiteViewController.swift in Sources */,
+				885812D8237EB86D00957415 /* RPicker.swift in Sources */,
+				88A217C92370A258005DEE8D /* UIApplication+Extension.swift in Sources */,
+				885812B72378F38600957415 /* SmsViewController.swift in Sources */,
+				FD649BAD1FFF732B000B7720 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD649BB91FFF732B000B7720 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD649BC21FFF732B000B7720 /* EthnoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD649BC41FFF732B000B7720 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD649BCD1FFF732B000B7720 /* EthnoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		885812E3237EC87A00957415 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 885812DC237EC87900957415 /* OneSignalNotificationServiceExtension */;
+			targetProxy = 885812E2237EC87A00957415 /* PBXContainerItemProxy */;
+		};
+		FD649BBF1FFF732B000B7720 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FD649BA81FFF732B000B7720 /* Ethno */;
+			targetProxy = FD649BBE1FFF732B000B7720 /* PBXContainerItemProxy */;
+		};
+		FD649BCA1FFF732B000B7720 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FD649BA81FFF732B000B7720 /* Ethno */;
+			targetProxy = FD649BC91FFF732B000B7720 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FD649BB01FFF732B000B7720 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FD649BB11FFF732B000B7720 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+			usesTabs = 0;
+		};
+		FD649BB51FFF732B000B7720 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FD649BB61FFF732B000B7720 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		885812E6237EC87A00957415 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1CC9E169BA42CC6EFD879FC9 /* Pods-Ethno-OneSignalNotificationServiceExtension.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = A78FA7DXLL;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.afisha.ethno.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = DEVEthnoExtension;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		885812E7237EC87A00957415 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BDFE71CC611A13BD7BAF7D4C /* Pods-Ethno-OneSignalNotificationServiceExtension.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = A78FA7DXLL;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.afisha.ethno.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = DEVEthnoExtension;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FD649BCF1FFF732B000B7720 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FD649BD01FFF732B000B7720 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FD649BD21FFF732B000B7720 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78A01B904A53DCFD18C950F5 /* Pods-Ethno.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A78FA7DXLL;
+				INFOPLIST_FILE = Ethno/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.7;
+				PRODUCT_BUNDLE_IDENTIFIER = com.afisha.ethno;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = DEV_ETHNO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FD649BD31FFF732B000B7720 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 521F2736C3F053F4B29AD34F /* Pods-Ethno.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A78FA7DXLL;
+				INFOPLIST_FILE = Ethno/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.7;
+				PRODUCT_BUNDLE_IDENTIFIER = com.afisha.ethno;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = DEV_ETHNO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FD649BD51FFF732B000B7720 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DFC7490C06E197525CB9D8E8 /* Pods-EthnoTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = A78FA7DXLL;
+				INFOPLIST_FILE = EthnoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.john.EthnoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ethno.app/Ethno";
+			};
+			name = Debug;
+		};
+		FD649BD61FFF732B000B7720 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 931C4E2FC5793B9401CE4E32 /* Pods-EthnoTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = A78FA7DXLL;
+				INFOPLIST_FILE = EthnoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.john.EthnoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ethno.app/Ethno";
+			};
+			name = Release;
+		};
+		FD649BD81FFF732B000B7720 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ABB439FBE1BC9CF51F7C6905 /* Pods-Ethno-EthnoUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A78FA7DXLL;
+				INFOPLIST_FILE = EthnoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.john.EthnoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Ethno;
+			};
+			name = Debug;
+		};
+		FD649BD91FFF732B000B7720 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F86CA32F0B70ADDE0E9693FB /* Pods-Ethno-EthnoUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A78FA7DXLL;
+				INFOPLIST_FILE = EthnoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.john.EthnoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Ethno;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		885812E5237EC87A00957415 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				885812E6237EC87A00957415 /* Debug */,
+				885812E7237EC87A00957415 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD649BA41FFF732A000B7720 /* Build configuration list for PBXProject "Ethno" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD649BCF1FFF732B000B7720 /* Debug */,
+				FD649BD01FFF732B000B7720 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD649BD11FFF732B000B7720 /* Build configuration list for PBXNativeTarget "Ethno" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD649BD21FFF732B000B7720 /* Debug */,
+				FD649BD31FFF732B000B7720 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD649BD41FFF732B000B7720 /* Build configuration list for PBXNativeTarget "EthnoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD649BD51FFF732B000B7720 /* Debug */,
+				FD649BD61FFF732B000B7720 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD649BD71FFF732B000B7720 /* Build configuration list for PBXNativeTarget "EthnoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD649BD81FFF732B000B7720 /* Debug */,
+				FD649BD91FFF732B000B7720 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FD649BA11FFF732A000B7720 /* Project object */;
+}
