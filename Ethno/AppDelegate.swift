@@ -150,10 +150,14 @@ extension AppDelegate : SideMenuControllerDelegate{
     
     private func setavplayer(){
         do {
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
+            if #available(iOS 10.0, *) {
+                try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback, mode: AVAudioSession.Mode.default)
+                try AVAudioSession.sharedInstance().setActive(true)
+            } else {
+                // Fallback on earlier versions
+            }
             print("AVAudioSession Category Playback OK")
             do {
-                try AVAudioSession.sharedInstance().setActive(true)
                 UIApplication.shared.beginReceivingRemoteControlEvents()
                 print("AVAudioSession is Active")
             } catch let error as NSError {

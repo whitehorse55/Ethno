@@ -17,7 +17,7 @@ class MainViewController: ViewController {
     var backimgs = ["slider","slider1","slider2","slider3"]
     
     var webView: WKWebView!
-    var avPlayer:AVPlayer?
+    var avPlayer:AVPlayer = AVPlayer()
     var avPlayerItem:AVPlayerItem?
     var isplaying : Bool!
     
@@ -65,7 +65,7 @@ class MainViewController: ViewController {
         sideMenuController?.embed(centerViewController: nav_vc)
     }
     @IBAction func valuechangedslider(_ sender: Any) {
-        avPlayer?.volume = slider_volume.value
+        avPlayer.volume = slider_volume.value
     }
     
 }
@@ -113,17 +113,17 @@ extension MainViewController :  AVAudioPlayerDelegate , WKNavigationDelegate{
             let url = NSURL(string: urlstring)
             avPlayerItem = AVPlayerItem.init(url: url! as URL)
             avPlayer = AVPlayer.init(playerItem: avPlayerItem)
-            avPlayer?.volume = 1.0
-            avPlayer?.play()
+        avPlayer.volume = 1.0
+        avPlayer.play()
     }
     
     @IBAction func onclickplaybutton(_ sender: Any) {
            if(isplaying){
-               self.avPlayer?.pause()
+            self.avPlayer.pause()
                self.isplaying = false
               btn_play.setImage(UIImage(named: "play"), for: .normal)
            }else{
-               self.avPlayer?.play()
+            self.avPlayer.play()
                self.isplaying = true
                btn_play.setImage(UIImage(named: "pause"), for: .normal)
            }
