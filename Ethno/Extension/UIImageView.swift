@@ -28,4 +28,26 @@ extension UIImageView {
         guard let url = URL(string: link) else { return }
         downloaded(from: url, contentMode: mode)
     }
+    
+  
+}
+
+extension UIImage{
+    func imageWithColor(tintColor: UIColor) -> UIImage {
+           UIGraphicsBeginImageContextWithOptions(self.size, false, self.scale)
+
+           let context = UIGraphicsGetCurrentContext() as! CGContext
+           context.translateBy(x: 0, y: size.height)
+           context.scaleBy(x: 1, y: -1)
+           context.setBlendMode(.normal)
+
+           let rect = CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height) as CGRect
+           context.clip(to: rect, mask: self.cgImage!)
+           tintColor.setFill()
+           context.fill(rect)
+           let newImage = UIGraphicsGetImageFromCurrentImageContext() as! UIImage
+           UIGraphicsEndImageContext()
+
+           return newImage
+       }
 }

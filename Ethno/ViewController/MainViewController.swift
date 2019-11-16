@@ -26,6 +26,7 @@ class MainViewController: ViewController {
     @IBOutlet weak var btn_play: UIButton!
     @IBOutlet weak var tbl_anomunce: UITableView!
     @IBOutlet weak var scrollview: UIScrollView!
+    @IBOutlet weak var slider_volume: UISlider!
     
     var array_announcement  = [Model_Announcements]()
     
@@ -37,6 +38,7 @@ class MainViewController: ViewController {
         self.navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController!.navigationBar.shadowImage = UIImage()
         self.navigationController!.navigationBar.isTranslucent = true
+    
         setnavigationbuttons()
         preparePlayer()
         showwebview()
@@ -55,7 +57,17 @@ class MainViewController: ViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
- 
+    
+    @IBAction func onclickalarmbutton(_ sender: Any) {
+        let mainstoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let alarmvc : AlarmViewController = mainstoryboard.instantiateViewController(withIdentifier: "VC_Alarm") as! AlarmViewController
+        let nav_vc = UINavigationController(rootViewController: alarmvc)
+        sideMenuController?.embed(centerViewController: nav_vc)
+    }
+    @IBAction func valuechangedslider(_ sender: Any) {
+        avPlayer?.volume = slider_volume.value
+    }
+    
 }
 
 extension MainViewController : HSCycleGalleryViewDelegate{
@@ -109,9 +121,11 @@ extension MainViewController :  AVAudioPlayerDelegate , WKNavigationDelegate{
            if(isplaying){
                self.avPlayer?.pause()
                self.isplaying = false
+              btn_play.setImage(UIImage(named: "play"), for: .normal)
            }else{
                self.avPlayer?.play()
                self.isplaying = true
+               btn_play.setImage(UIImage(named: "pause"), for: .normal)
            }
     }
     

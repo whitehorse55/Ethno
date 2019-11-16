@@ -19,8 +19,13 @@ class AlarmViewController: ViewController{
         setnavigationbuttons()
         alarm_switch.isOn = false
         alarm_switch.isHidden = true
-        getalarmtime()
+  
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        getalarmtime()
     }
     
     @IBAction func onclickaddbutton(_ sender: Any) {
@@ -28,7 +33,7 @@ class AlarmViewController: ViewController{
              // TODO: Your implementation for date
             self.alarm_switch.isOn = false
             self.alarm_switch.isHidden = false
-            self.alarmtime.text = selectedDate.dateString("hh:mm")
+            self.alarmtime.text = selectedDate.dateString("HH:mm")
          })
     }
     
@@ -54,18 +59,22 @@ class AlarmViewController: ViewController{
         if UserDefaults.standard.isKeyPresentInUserDefaults(key: UserDefaultKeys.alarmtime.rawValue)
         {
             let alarmtime = UserDefaults.standard.getalarmtime()
-            let alarmstatus = UserDefaults.standard.gettemperature()
+            let alarmstatus = UserDefaults.standard.getalarmstatus()
             self.alarmtime.text = alarmtime
             alarm_switch.isOn = alarmstatus
             alarm_switch.isHidden = false
             
-            let alarmhours = getsubstring(str: alarmtime)
-            
-            if #available(iOS 10.0, *) {
-                setalarmconfig(alarmhour: Int(alarmhours[0])! , alarmmin: Int(alarmhours[1])!)
-            } else {
-                // Fallback on earlier versions
+            if alarmstatus == true
+            {
+                let alarmhours = getsubstring(str: alarmtime)
+               
+               if #available(iOS 10.0, *) {
+                   setalarmconfig(alarmhour: Int(alarmhours[0])! , alarmmin: Int(alarmhours[1])!)
+               } else {
+                   // Fallback on earlier versions
+               }
             }
+           
         }
       
     }

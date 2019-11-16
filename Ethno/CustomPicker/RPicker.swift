@@ -37,7 +37,7 @@ UIApplication.shared.sendAction(#selector(UIApplication.resignFirstResponder), t
             let datePicker = UIDatePicker()
             datePicker.datePickerMode = datePickerMode
             datePicker.backgroundColor = UIColor.white
-            
+            datePicker.locale = Locale(identifier: "en_GB")
             datePicker.minimumDate = minDate
             datePicker.maximumDate = maxDate
             

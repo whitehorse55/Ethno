@@ -18,7 +18,8 @@ class MenuController: UIViewController {
     @IBOutlet weak var lb_temperature: UILabel!
     @IBOutlet weak var btl_menu: UITableView!
     @IBOutlet weak var haderview: UIView!
-    
+    @IBOutlet weak var lb_clock: UILabel!
+    var timer = Timer()
     var array_menu  = ["Home","Call Studio","Send SMS", "Open MIC", "Schedule", "Web Site", "Alarm", "Setting"]
     
     let locationManager = CLLocationManager()
@@ -29,6 +30,14 @@ class MenuController: UIViewController {
         btl_menu.separatorStyle = .none
         
         NotificationCenter.default.addObserver(self, selector: #selector(onOpensidebar), name: .opensidebar, object: nil)
+        
+        if #available(iOS 10.0, *) {
+            timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { (data) in
+                self.lb_clock.text = DateFormatter.localizedString(from: Date(), dateStyle: .none, timeStyle: .medium)
+            })
+        } else {
+            // Fallback on earlier versions
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

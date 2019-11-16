@@ -12,6 +12,7 @@ import AVKit
 import SideMenuController
 import OneSignal
 import UserNotifications
+import BackgroundTasks
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,12 +21,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        if #available(iOS 13.0, *) {
+            registerBackgroundTaks()
+        } else {
+            // Fallback on earlier versions
+        }
         
         if UserDefaults.standard.isKeyPresentInUserDefaults(key: UserDefaultKeys.temperature.rawValue)
         {
 
         }else{
-            UserDefaults.standard.settemperture(value: true)
+            UserDefaults.standard.settemperture(value: false)
             UserDefaults.standard.setmicon(value: true)
         }
        
@@ -63,6 +69,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
         print("enter background", UIApplication.shared.backgroundTimeRemaining)
+        
+        if #available(iOS 13.0, *) {
+            scheduleAppRefresh()
+            scheduleImagefetcher()
+        } else {
+            // Fallback on earlier versions
+        }
+     
         
         UIApplication.shared.runInBackground({
             do {
@@ -187,4 +201,77 @@ extension AppDelegate : UNUserNotificationCenterDelegate{
            // you must call the completion handler when you're done
            completionHandler()
     }
+}
+
+
+@available(iOS 13.0, *)
+extension AppDelegate{
+    private func registerBackgroundTaks() {
+
+        BGTaskScheduler.shared.register(forTaskWithIdentifier: "com.ethno.imagefetcher", using: nil) { task in
+        //This task is cast with processing request (BGProcessingTask)
+            self.handleImageFetcherTask(task: task as! BGProcessingTask)
+            
+        }
+
+        BGTaskScheduler.shared.register(forTaskWithIdentifier: "com.ethno.apprefresh", using: nil) { task in
+        //This task is cast with processing request (BGAppRefreshTask)
+            self.handleAppRefreshTask(task: task as! BGAppRefreshTask)
+        }
+    }
+    
+  
+    
+    
+    public func scheduleImagefetcher() {
+        
+        let request = BGProcessingTaskRequest(identifier: "com.ethno.imagefetcher")
+        request.requiresNetworkConnectivity = false // Need to true if your task need to network process. Defaults to false.
+        request.requiresExternalPower = false
+        //If we keep requiredExternalPower = true then it required device is connected to external power.
+
+        request.earliestBeginDate = Date(timeIntervalSinceNow: 1 * 60) // fetch Image Count after 1 minute.
+        //Note :: EarliestBeginDate should not be set to too far into the future.
+        do {
+        try BGTaskScheduler.shared.submit(request)
+        } catch {
+        print("Could not schedule image fetch: (error)")
+        }
+    }
+
+    func scheduleAppRefresh() {
+        let request = BGAppRefreshTaskRequest(identifier: "com.ethno.apprefresh")
+        request.earliestBeginDate = Date(timeIntervalSinceNow: 2 * 60) // App Refresh after 2 minute.
+        //Note :: EarliestBeginDate should not be set to too far into the future.
+        do {
+        try BGTaskScheduler.shared.submit(request)
+        } catch {
+        print("Could not schedule app refresh: (error)")
+        }
+    }
+    
+    func cancelAllPendingBGTask() {
+        BGTaskScheduler.shared.cancelAllTaskRequests()
+    }
+    
+    func handleAppRefreshTask(task: BGAppRefreshTask) {
+
+          task.expirationHandler = {
+
+          }
+         DispatchQueue.main.async {
+         task.setTaskCompleted(success: true)
+      }
+    }
+
+      func handleImageFetcherTask(task: BGProcessingTask) {
+          self.scheduleImagefetcher()
+
+          //Todo Work
+          task.expirationHandler = {
+
+          }
+          task.setTaskCompleted(success: true)
+
+      }
 }
