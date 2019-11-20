@@ -98,8 +98,8 @@ extension AlarmViewController{
         center.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
             if granted {
                 let content = UNMutableNotificationContent()
-                content.title = "Welcome back to Ethno"
-                content.body = ""
+                content.title = "Ethno"
+                content.body = "Welcome back to Ethno."
                 content.categoryIdentifier = "alarm"
                 content.userInfo = ["userinfo": "alarm"]
                 content.sound = UNNotificationSound.init(named: UNNotificationSoundName.init("alarm.mp3"))

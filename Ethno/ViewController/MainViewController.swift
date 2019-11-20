@@ -20,6 +20,7 @@ class MainViewController: ViewController {
     var avPlayer:AVPlayer = AVPlayer()
     var avPlayerItem:AVPlayerItem?
     var isplaying : Bool!
+    var timer = Timer()
     
     @IBOutlet weak var view_player: UIView!
     @IBOutlet weak var videoview: UIView!
@@ -27,7 +28,10 @@ class MainViewController: ViewController {
     @IBOutlet weak var tbl_anomunce: UITableView!
     @IBOutlet weak var scrollview: UIScrollView!
     @IBOutlet weak var slider_volume: UISlider!
+    @IBOutlet weak var clocklabel: UILabel!
     
+    let delegate = UIApplication.shared.delegate as! AppDelegate
+   
     var array_announcement  = [Model_Announcements]()
     
     override func viewDidLoad() {
@@ -35,14 +39,23 @@ class MainViewController: ViewController {
 
         isplaying = true
         
+        delegate.preparePlayer()
+        
         self.navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController!.navigationBar.shadowImage = UIImage()
         self.navigationController!.navigationBar.isTranslucent = true
     
         setnavigationbuttons()
-        preparePlayer()
         showwebview()
         inittableview()
+        
+        if #available(iOS 10.0, *) {
+            self.timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { (data) in
+                self.clocklabel.text = DateFormatter.localizedString(from: Date(), dateStyle: .none, timeStyle: .medium)
+            })
+        } else {
+            // Fallback on earlier versions
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -64,6 +77,7 @@ class MainViewController: ViewController {
         let nav_vc = UINavigationController(rootViewController: alarmvc)
         sideMenuController?.embed(centerViewController: nav_vc)
     }
+    
     @IBAction func valuechangedslider(_ sender: Any) {
         avPlayer.volume = slider_volume.value
     }
@@ -107,23 +121,15 @@ extension MainViewController :  AVAudioPlayerDelegate , WKNavigationDelegate{
        webView.allowsBackForwardNavigationGestures = true
        webView.load(myRequest)
     }
-    
-     func preparePlayer() {
-            let urlstring = "http://ethno.fm:8500/ethnofm.mp3"
-            let url = NSURL(string: urlstring)
-            avPlayerItem = AVPlayerItem.init(url: url! as URL)
-            avPlayer = AVPlayer.init(playerItem: avPlayerItem)
-        avPlayer.volume = 1.0
-        avPlayer.play()
-    }
+
     
     @IBAction func onclickplaybutton(_ sender: Any) {
            if(isplaying){
-            self.avPlayer.pause()
+            delegate.avPlayer.pause()
                self.isplaying = false
               btn_play.setImage(UIImage(named: "play"), for: .normal)
            }else{
-            self.avPlayer.play()
+            delegate.avPlayer.play()
                self.isplaying = true
                btn_play.setImage(UIImage(named: "pause"), for: .normal)
            }

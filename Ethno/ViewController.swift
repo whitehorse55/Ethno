@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -36,7 +36,8 @@ class ViewController: UIViewController {
            self.navigationController?.addLogoImage(image: UIImage(named: "logo")!, navItem: self.navigationItem)
            navigationItem.rightBarButtonItems = [barButtonItem_call, space, barButtonItem_sms, space, barButtonItem_mic]
      }
-           
+    
+    
        @objc func onclickbarbuttons(sender : UIButton)
        {
             

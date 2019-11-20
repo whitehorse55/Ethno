@@ -23,9 +23,12 @@ class OpenMicViewController: ViewController, MFMailComposeViewControllerDelegate
     
     let filename = "record.m4a"
     var isrecording = false
+    let mailComposer = MFMailComposeViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        mailComposer.mailComposeDelegate = self
+        
         setnavigationbuttons()
         initaudio()
         recordbutton.setBackgroundImage(UIImage(named: "openrecord_inactive"), for: .normal)
@@ -74,31 +77,42 @@ class OpenMicViewController: ViewController, MFMailComposeViewControllerDelegate
     
    
     @IBAction func onclicksendbutton(_ sender: Any) {
-        if( MFMailComposeViewController.canSendMail() ) {
+        if(MFMailComposeViewController.canSendMail() ) {
                 print("Can send email.")
-
-                let mailComposer = MFMailComposeViewController()
-                mailComposer.mailComposeDelegate = self
-
                 //Set the subject and message of the email
                 mailComposer.setSubject("Voice Note")
-                mailComposer.setMessageBody("my sound", isHTML: false)
-                mailComposer.setToRecipients(["zhang19900505@hotmail.com"])
+                mailComposer.setMessageBody("Voice test. could you check your inbox?", isHTML: false)
+                mailComposer.setToRecipients(["Afishadeveloper@gmail.com"])
 
                 if let docsDir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as? String {
                     let fileManager = FileManager.default
                     let filecontent = fileManager.contents(atPath: docsDir + "/" + filename)
-                    mailComposer.addAttachmentData(filecontent!, mimeType: "audio/m4a", fileName: filename)
+                    mailComposer.addAttachmentData(filecontent!, mimeType: "audio/wav", fileName: filename)
+                    self.present(mailComposer, animated: true, completion: nil)
                 }
-
-                self.present(mailComposer, animated: true, completion: nil)
             }
         
     }
     
     
-    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
-            self.dismiss(animated: true, completion: nil)
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        switch result.rawValue {
+              case MFMailComposeResult.cancelled.rawValue:
+                     print("Mail cancelled")
+                     controller.dismiss(animated: true, completion: nil)
+              case MFMailComposeResult.saved.rawValue:
+                     print("Mail saved")
+                     controller.dismiss(animated: true, completion: nil)
+              case MFMailComposeResult.sent.rawValue:
+                     print("Mail sent")
+                     controller.dismiss(animated: true, completion: nil)
+              case MFMailComposeResult.failed.rawValue:
+                     print("Mail sent failure.")
+                     controller.dismiss(animated: true, completion: nil)
+                 default:
+                     break
+                 }
+        controller.dismiss(animated: true, completion: nil)
     }
     
 
@@ -166,6 +180,7 @@ extension OpenMicViewController : AVAudioRecorderDelegate
 extension OpenMicViewController : AVAudioPlayerDelegate{
     
     @IBAction func onclickplaybutton(_ sender: Any) {
+        
         preparePlayer()
         audioPlayer.play()
     }

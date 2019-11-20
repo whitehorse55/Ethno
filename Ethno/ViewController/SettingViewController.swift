@@ -12,6 +12,7 @@ class SettingViewController: ViewController {
 
     @IBOutlet weak var switch_mic: UISwitch!
     @IBOutlet weak var segment_unit: UISegmentedControl!
+    @IBOutlet weak var switch_setting: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +35,13 @@ class SettingViewController: ViewController {
     
     @IBAction func valusechangedswitch(_ sender: Any) {
         UserDefaults.standard.setmicon(value: self.switch_mic.isOn)
+    }
+    @IBAction func valuechangedpushnotification(_ sender: Any) {
+        if switch_setting.isOn{
+            UIApplication.shared.registerForRemoteNotifications()
+        }else{
+            UIApplication.shared.unregisterForRemoteNotifications()
+        }
     }
     
     func setsettinginfo()

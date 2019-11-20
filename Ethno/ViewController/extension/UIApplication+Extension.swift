@@ -11,7 +11,7 @@ import UIKit
 
 extension UIApplication {
  /// Run a block in background after app resigns activity
-  public func runInBackground(_ closure: @escaping () -> Void, expirationHandler: (() -> Void)? = nil) {
+    public func runInBackground(_ closure: @escaping () -> Void, expirationHandler: (() -> Void)? = nil) {
       DispatchQueue.main.async {
        let taskID: UIBackgroundTaskIdentifier
        if let expirationHandler = expirationHandler {
@@ -22,7 +22,9 @@ extension UIApplication {
       self.endBackgroundTask(taskID)
        closure()
 
-   }
- }
+        }
+    }
+    
+  
 
  }
