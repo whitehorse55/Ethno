@@ -13,6 +13,7 @@ target 'Ethno' do
   pod 'HSCycleGalleryView'
   pod 'RealmSwift'
   pod 'OneSignal', '>= 2.6.2', '< 3.0'
+  pod 'FSCalendar'
   
   target 'OneSignalNotificationServiceExtension' do
     pod 'OneSignal', '>= 2.6.2', '< 3.0'

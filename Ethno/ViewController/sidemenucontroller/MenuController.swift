@@ -8,7 +8,7 @@
 
 import UIKit
 import CoreLocation
-
+import SideMenuController
 
 class MenuController: UIViewController {
 
@@ -140,15 +140,15 @@ extension MenuController
 
             case 4:
                let web_vc : FMWebViewController = mainstoryboard.instantiateViewController(withIdentifier: "VC_Fmweb") as! FMWebViewController
-                web_vc.url = "https://calendar.google.com/calendar/"
+                web_vc.url = "http://ethno.fm/wp-content/uploads/2019/06/EthnoRadioSchedule.pdf"
                 nav_vc = UINavigationController(rootViewController: web_vc)
             break
 
 
             case 5:
-                let web_vc : FMWebViewController = mainstoryboard.instantiateViewController(withIdentifier: "VC_Fmweb") as! FMWebViewController
-                web_vc.url = "http://ethno.fm/new-main-2/#"
-                nav_vc = UINavigationController(rootViewController: web_vc)
+                let sitevc : FMWebViewController = mainstoryboard.instantiateViewController(withIdentifier: "VC_Fmweb") as! FMWebViewController
+                sitevc.url = "http://ethno.fm/new-main-2/#"
+                nav_vc = UINavigationController(rootViewController: sitevc)
                
             break
 

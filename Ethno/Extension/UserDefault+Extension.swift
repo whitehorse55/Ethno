@@ -7,6 +7,7 @@ enum UserDefaultKeys : String
     case temperature
     case alarmtime
     case alarmstatus
+    case notificationstatus
 }
 
 extension UserDefaults
@@ -44,6 +45,14 @@ extension UserDefaults
     }
     
     func getalarmstatus() -> Bool{
+        return bool(forKey: UserDefaultKeys.alarmstatus.rawValue)
+    }
+    
+    func setnotificationstatus(value : Bool){
+        set(value, forKey: UserDefaultKeys.alarmstatus.rawValue)
+    }
+    
+    func getnotificationstatus() -> Bool{
         return bool(forKey: UserDefaultKeys.alarmstatus.rawValue)
     }
     

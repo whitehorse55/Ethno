@@ -24,7 +24,7 @@ class OpenMicViewController: ViewController, MFMailComposeViewControllerDelegate
     let filename = "record.m4a"
     var isrecording = false
     let mailComposer = MFMailComposeViewController()
-    
+    var isplaying = false
     override func viewDidLoad() {
         super.viewDidLoad()
         mailComposer.mailComposeDelegate = self
@@ -180,9 +180,18 @@ extension OpenMicViewController : AVAudioRecorderDelegate
 extension OpenMicViewController : AVAudioPlayerDelegate{
     
     @IBAction func onclickplaybutton(_ sender: Any) {
-        
         preparePlayer()
-        audioPlayer.play()
+        if(isplaying)
+        {
+            isplaying = false
+            playbutton.setImage(UIImage(named: "play_red"), for: .normal)
+            audioPlayer.pause()
+        }else{
+            isplaying = true
+            playbutton.setImage(UIImage(named: "pause_red"), for: .normal)
+            audioPlayer.play()
+        }
+        
     }
     
     

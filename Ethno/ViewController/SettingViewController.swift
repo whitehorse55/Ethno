@@ -36,11 +36,15 @@ class SettingViewController: ViewController {
     @IBAction func valusechangedswitch(_ sender: Any) {
         UserDefaults.standard.setmicon(value: self.switch_mic.isOn)
     }
+    
+    
     @IBAction func valuechangedpushnotification(_ sender: Any) {
         if switch_setting.isOn{
             UIApplication.shared.registerForRemoteNotifications()
+            UserDefaults.standard.setnotificationstatus(value: true)
         }else{
             UIApplication.shared.unregisterForRemoteNotifications()
+            UserDefaults.standard.setnotificationstatus(value: false)
         }
     }
     
@@ -48,6 +52,7 @@ class SettingViewController: ViewController {
     {
         let unitstatus = UserDefaults.standard.gettemperature()
         let micstatus = UserDefaults.standard.getmicon()
+        let notificationstatus = UserDefaults.standard.getnotificationstatus()
         
         if unitstatus == true{
             self.segment_unit.selectedSegmentIndex = 0
@@ -56,6 +61,7 @@ class SettingViewController: ViewController {
         }
         
         self.switch_mic.setOn(micstatus, animated: true)
+        self.switch_setting.setOn(notificationstatus, animated: false)
     }
     
 }

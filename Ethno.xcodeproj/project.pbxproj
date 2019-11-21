@@ -42,6 +42,7 @@
 		885812E4237EC87A00957415 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 885812DD237EC87900957415 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		885812EA237ECBFE00957415 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885812E9237ECBFE00957415 /* SettingViewController.swift */; };
 		88893EC3237FBB2E00298FFE /* alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 88893EC2237FBB2E00298FFE /* alarm.mp3 */; };
+		88893ECA238565A800298FFE /* DIYCalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88893EC9238565A800298FFE /* DIYCalendarCell.swift */; };
 		88A217C92370A258005DEE8D /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A217C82370A258005DEE8D /* UIApplication+Extension.swift */; };
 		88A217CC2370DCC8005DEE8D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88A217CB2370DCC8005DEE8D /* AVFoundation.framework */; };
 		88BC1EDE237117570006F4D7 /* SiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BC1EDD237117570006F4D7 /* SiteViewController.swift */; };
@@ -139,6 +140,7 @@
 		885812E9237ECBFE00957415 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		88893EC2237FBB2E00298FFE /* alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarm.mp3; sourceTree = "<group>"; };
 		88893EC4237FC9C600298FFE /* Ethno.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Ethno.entitlements; sourceTree = "<group>"; };
+		88893EC9238565A800298FFE /* DIYCalendarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DIYCalendarCell.swift; sourceTree = "<group>"; };
 		88A217C82370A258005DEE8D /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		88A217CB2370DCC8005DEE8D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		88BC1EDD237117570006F4D7 /* SiteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteViewController.swift; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 		885812AB2378053C00957415 /* CollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				88893EC9238565A800298FFE /* DIYCalendarCell.swift */,
 				885812AC2378055E00957415 /* Cell_Advertise.swift */,
 				885812AD2378055E00957415 /* Cell_Advertise.xib */,
 				885812BB237A7F1A00957415 /* Cell_Announcement.swift */,
@@ -610,6 +613,7 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Ethno-EthnoUITests/Pods-Ethno-EthnoUITests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/HSCycleGalleryView/HSCycleGalleryView.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
@@ -619,6 +623,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HSCycleGalleryView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
@@ -682,6 +687,7 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Ethno/Pods-Ethno-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/HSCycleGalleryView/HSCycleGalleryView.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
@@ -691,6 +697,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HSCycleGalleryView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
@@ -759,6 +766,7 @@
 				885812C2237A92EC00957415 /* FMWebViewController.swift in Sources */,
 				885812B12378DAC600957415 /* OpenMicViewController.swift in Sources */,
 				885812EA237ECBFE00957415 /* SettingViewController.swift in Sources */,
+				88893ECA238565A800298FFE /* DIYCalendarCell.swift in Sources */,
 				885812AA2377F42800957415 /* UINavigationItem.swift in Sources */,
 				885812C5237B841600957415 /* Urlservice.swift in Sources */,
 				885812D5237E7B0000957415 /* Model_Realm.swift in Sources */,
@@ -840,7 +848,7 @@
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MARKETING_VERSION = 1.8.2;
+				MARKETING_VERSION = 1.8.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.afisha.ethno.OneSignalNotificationServiceExtension;
@@ -865,7 +873,7 @@
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MARKETING_VERSION = 1.8.2;
+				MARKETING_VERSION = 1.8.3;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.afisha.ethno.OneSignalNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -997,7 +1005,7 @@
 				INFOPLIST_FILE = Ethno/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.8.2;
+				MARKETING_VERSION = 1.8.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.afisha.ethno;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = DEV_ETHNO;
@@ -1020,7 +1028,7 @@
 				INFOPLIST_FILE = Ethno/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.8.2;
+				MARKETING_VERSION = 1.8.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.afisha.ethno;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = DEV_ETHNO;

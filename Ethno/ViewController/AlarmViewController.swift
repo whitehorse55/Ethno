@@ -13,6 +13,7 @@ class AlarmViewController: ViewController{
 
     @IBOutlet weak var alarmtime: UILabel!
     @IBOutlet weak var alarm_switch: UISwitch!
+    let delegate = UIApplication.shared.delegate as! AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,32 +26,36 @@ class AlarmViewController: ViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        delegate.preparePlayer()
         getalarmtime()
     }
     
     @IBAction func onclickaddbutton(_ sender: Any) {
         RPicker.selectDate(title: "Select time", datePickerMode: .time, didSelectDate: { (selectedDate) in
              // TODO: Your implementation for date
-            self.alarm_switch.isOn = false
+            self.alarm_switch.isOn = true
             self.alarm_switch.isHidden = false
             self.alarmtime.text = selectedDate.dateString("HH:mm")
+            self.setalarm()
          })
     }
     
     @IBAction func onchangevalue(_ sender: Any) {
         if alarm_switch.isOn{
-            UserDefaults.standard.setalarmtime(value: alarmtime.text!)
-            UserDefaults.standard.setalarmstatus(value: true)
-            let alarmhours = getsubstring(str: self.alarmtime.text!)
-            
-            if #available(iOS 10.0, *) {
-                setalarmconfig(alarmhour: Int(alarmhours[0])! , alarmmin: Int(alarmhours[1])!)
-            } else {
-                // Fallback on earlier versions
-            }
+            setalarm()
         }else{
-            UserDefaults.standard.setalarmtime(value: "")
             UserDefaults.standard.setalarmstatus(value: false)
+        }
+    }
+    
+    private func setalarm()
+    {
+        UserDefaults.standard.setalarmtime(value: alarmtime.text!)
+        UserDefaults.standard.setalarmstatus(value: true)
+        let alarmhours = getsubstring(str: self.alarmtime.text!)
+
+        if #available(iOS 10.0, *) {
+          setalarmconfig(alarmhour: Int(alarmhours[0])! , alarmmin: Int(alarmhours[1])!)
         }
     }
     
@@ -101,7 +106,7 @@ extension AlarmViewController{
                 content.title = "Ethno"
                 content.body = "Welcome back to Ethno."
                 content.categoryIdentifier = "alarm"
-                content.userInfo = ["userinfo": "alarm"]
+                content.userInfo = ["userinfo": "0"]
                 content.sound = UNNotificationSound.init(named: UNNotificationSoundName.init("alarm.mp3"))
 
                var dateComponents = DateComponents()

@@ -38,6 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }else{
             UserDefaults.standard.settemperture(value: false)
             UserDefaults.standard.setmicon(value: true)
+            UserDefaults.standard.setnotificationstatus(value: true)
         }
         
         
@@ -100,18 +101,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-        do {
-            if #available(iOS 10.0, *) {
-                try AVAudioSession.sharedInstance().setCategory(.ambient, mode: .default)
-                try AVAudioSession.sharedInstance().setActive(true)
-                UIApplication.shared.beginReceivingRemoteControlEvents()
-            } else {
-                // Fallback on earlier versions
-            }
-            
-        } catch {
-            print(error)
-        }
+        //        do {
+        //            if #available(iOS 10.0, *) {
+        //                try AVAudioSession.sharedInstance().setCategory(.ambient, mode: .default)
+        //                try AVAudioSession.sharedInstance().setActive(true)
+        //                UIApplication.shared.beginReceivingRemoteControlEvents()
+        //            } else {
+        //                // Fallback on earlier versions
+        //            }
+        //
+        //        } catch {
+        //            print(error)
+        //        }
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
@@ -168,20 +169,45 @@ extension AppDelegate : SideMenuControllerDelegate{
         NotificationCenter.default.post(name: .opensidebar, object: nil)
     }
     
+    private func setviewwhennotificationreceive()
+    {
+        SideMenuController.preferences.drawing.menuButtonImage = UIImage(named: "burger_menu")
+        SideMenuController.preferences.drawing.sidePanelPosition = .overCenterPanelLeft
+        SideMenuController.preferences.drawing.sidePanelWidth = 250
+        SideMenuController.preferences.drawing.centerPanelShadow = true
+        SideMenuController.preferences.animating.statusBarBehaviour = .showUnderlay
+        SideMenuController.preferences.animating.transitionAnimator = FadeAnimator.self
+        
+        
+        let mainstoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let sidemenucontroller = SideMenuController()
+        let sidemenuvc : MenuController = mainstoryboard.instantiateViewController(withIdentifier: "VC_Menu") as! MenuController
+        let alarmvc : AlarmViewController = mainstoryboard.instantiateViewController(withIdentifier: "VC_Alarm") as! AlarmViewController
+        let navcontroller = UINavigationController(rootViewController:alarmvc)
+        
+        sidemenucontroller.delegate = self
+        sidemenucontroller.embed(sideViewController: sidemenuvc)
+        sidemenucontroller.embed(centerViewController: navcontroller)
+        
+        window?.rootViewController = sidemenucontroller
+    }
 }
 
 
 extension AppDelegate : UNUserNotificationCenterDelegate{
     @available(iOS 10.0, *)
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        print("** didReceive")
-        if response.actionIdentifier == UNNotificationDismissActionIdentifier {
-            // The user dismissed the notification without taking action
-            preparePlayer()
+        print("user clicked on the notification")
+        let userInfo = response.notification.request.content.userInfo
+        let targetValue = userInfo["userinfo"] as? String ?? "0"
+        
+        if targetValue == "0"
+        {
+            setviewwhennotificationreceive()
         }
-        else if response.actionIdentifier == UNNotificationDefaultActionIdentifier {
-            // The user launched the app
-        }
+        
+        completionHandler()
+        
         completionHandler()
     }
     
