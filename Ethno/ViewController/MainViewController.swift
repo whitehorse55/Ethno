@@ -13,11 +13,11 @@ import WebKit
 import AVFoundation
 import AVKit
 
+
 class MainViewController: ViewController {
     var backimgs = ["slider","slider1","slider2","slider3"]
     
     var webView: WKWebView!
-    var avPlayer:AVPlayer = AVPlayer()
     var avPlayerItem:AVPlayerItem?
     var isplaying : Bool!
     var timer = Timer()
@@ -28,7 +28,7 @@ class MainViewController: ViewController {
     @IBOutlet weak var tbl_anomunce: UITableView!
     @IBOutlet weak var scrollview: UIScrollView!
     @IBOutlet weak var slider_volume: UISlider!
-    @IBOutlet weak var clocklabel: UILabel!
+//    @IBOutlet weak var clocklabel: UILabel!
     
     let delegate = UIApplication.shared.delegate as! AppDelegate
    
@@ -36,11 +36,8 @@ class MainViewController: ViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        isplaying = true
-        
+          isplaying = true
         delegate.preparePlayer()
-        
         self.navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController!.navigationBar.shadowImage = UIImage()
         self.navigationController!.navigationBar.isTranslucent = true
@@ -49,17 +46,17 @@ class MainViewController: ViewController {
         showwebview()
         inittableview()
         
-        if #available(iOS 10.0, *) {
-            self.timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { (data) in
-                self.clocklabel.text = DateFormatter.localizedString(from: Date(), dateStyle: .none, timeStyle: .medium)
-            })
-        } else {
-            // Fallback on earlier versions
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        if delegate.avPlayerItem == nil
+        {
+            delegate.preparePlayer()
+        }else{
+            delegate.avPlayerItem = nil
+            delegate.preparePlayer()
+        }
         setpagerview()
     }
 
@@ -79,7 +76,7 @@ class MainViewController: ViewController {
     }
     
     @IBAction func valuechangedslider(_ sender: Any) {
-        avPlayer.volume = slider_volume.value
+        delegate.avPlayer.volume = slider_volume.value
     }
     
 }
@@ -126,8 +123,8 @@ extension MainViewController :  AVAudioPlayerDelegate , WKNavigationDelegate{
     @IBAction func onclickplaybutton(_ sender: Any) {
            if(isplaying){
             delegate.avPlayer.pause()
-               self.isplaying = false
-              btn_play.setImage(UIImage(named: "play"), for: .normal)
+            self.isplaying = false
+            btn_play.setImage(UIImage(named: "play"), for: .normal)
            }else{
             delegate.avPlayer.play()
                self.isplaying = true
@@ -152,7 +149,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource{
             self.array_announcement = data
             self.tbl_anomunce.reloadData()
         }) { (error) in
-            self.showToast(message: "Data not existed", font: UIFont(name: "system", size: 16)!)
+//            self.showToast(message: "Data not existed", font: UIFont(name: "system", size: 16)!)
         }
     }
     

@@ -13,6 +13,7 @@ import SideMenuController
 import OneSignal
 import UserNotifications
 import BackgroundTasks
+import MediaPlayer
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,12 +25,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         avPlayer.allowsExternalPlayback = true
+        self.setupRemoteTransportControls()
+        self.setupNowPlaying()
+        
         if #available(iOS 13.0, *) {
             self.registerBackgroundTaks()
             UNUserNotificationCenter.current().delegate = self
         } else {
             // Fallback on earlier versions
         }
+        
         
         
         if UserDefaults.standard.isKeyPresentInUserDefaults(key: UserDefaultKeys.temperature.rawValue)
@@ -73,26 +78,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-        print("enter background", UIApplication.shared.backgroundTimeRemaining)
         
         do {
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
-            try AVAudioSession.sharedInstance().setActive(true)
-            UIApplication.shared.beginReceivingRemoteControlEvents()
-        }catch{
-            print( "testerror",error)
-        }
-        if #available(iOS 13.0, *) {
-            scheduleAppRefresh()
-            scheduleImagefetcher()
-        } else {
-            // Fallback on earlier versions
+            if #available(iOS 10.0, *) {
+                try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback, mode: AVAudioSession.Mode.default)
+                try AVAudioSession.sharedInstance().setActive(true)
+                UIApplication.shared.beginReceivingRemoteControlEvents()
+            } else {
+                // Fallback on earlier versions
+            }
+            
+        } catch let error as NSError {
+            print(error.localizedDescription)
         }
         
-        
-        //        UIApplication.shared.runInBackground({
-        //
-        //        })
     }
     
     func applicationWillEnterForeground(_ application: UIApplication) {
@@ -100,19 +99,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-        //        do {
-        //            if #available(iOS 10.0, *) {
-        //                try AVAudioSession.sharedInstance().setCategory(.ambient, mode: .default)
-        //                try AVAudioSession.sharedInstance().setActive(true)
-        //                UIApplication.shared.beginReceivingRemoteControlEvents()
-        //            } else {
-        //                // Fallback on earlier versions
-        //            }
-        //
-        //        } catch {
-        //            print(error)
-        //        }
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
@@ -207,8 +193,6 @@ extension AppDelegate : UNUserNotificationCenterDelegate{
         }
         
         completionHandler()
-        
-        completionHandler()
     }
     
     @available(iOS 10.0, *)
@@ -227,10 +211,9 @@ extension AppDelegate : UNUserNotificationCenterDelegate{
                 try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback, mode: AVAudioSession.Mode.default)
                 try AVAudioSession.sharedInstance().setActive(true)
                 UIApplication.shared.beginReceivingRemoteControlEvents()
-                print("AVAudioSession is Active")
                 avPlayerItem = AVPlayerItem.init(url: url! as URL)
                 avPlayer = AVPlayer.init(playerItem: avPlayerItem)
-                avPlayer.volume = 1.0
+                avPlayer.volume = 0.5
                 NotificationCenter.default.addObserver(self, selector: #selector(onvideoend), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
                 avPlayer.play()
             } else {
@@ -240,6 +223,7 @@ extension AppDelegate : UNUserNotificationCenterDelegate{
         } catch let error as NSError {
             print(error.localizedDescription)
         }
+        
     }
     
     @objc func onvideoend()
@@ -248,6 +232,56 @@ extension AppDelegate : UNUserNotificationCenterDelegate{
     }
 }
 
+
+extension AppDelegate
+{
+    func setupRemoteTransportControls() {
+        // Get the shared MPRemoteCommandCenter
+        let commandCenter = MPRemoteCommandCenter.shared()
+        
+        // Add handler for Play Command
+        commandCenter.playCommand.addTarget { [unowned self] event in
+            if self.avPlayer.rate == 0.0 {
+                self.avPlayer.play()
+                return .success
+            }
+            return .commandFailed
+        }
+        
+        // Add handler for Pause Command
+        commandCenter.pauseCommand.addTarget { [unowned self] event in
+            if self.avPlayer.rate == 1.0 {
+                self.avPlayer.pause()
+                return .success
+            }
+            return .commandFailed
+        }
+    }
+    
+    func setupNowPlaying() {
+        // Define Now Playing Info
+        var nowPlayingInfo = [String : Any]()
+        nowPlayingInfo[MPMediaItemPropertyTitle] = "EThno.FM"
+        
+        if let image = UIImage(named: "lockscreen") {
+            if #available(iOS 10.0, *) {
+                nowPlayingInfo[MPMediaItemPropertyArtwork] =
+                    MPMediaItemArtwork(boundsSize: image.size) { size in
+                        return image
+                }
+                
+                nowPlayingInfo[MPNowPlayingInfoPropertyElapsedPlaybackTime] = avPlayerItem!.currentTime().seconds
+                nowPlayingInfo[MPMediaItemPropertyPlaybackDuration] = avPlayerItem!.asset.duration.seconds
+                nowPlayingInfo[MPNowPlayingInfoPropertyPlaybackRate] = avPlayer.rate
+            } else {
+                // Fallback on earlier versions
+            }
+        }
+        // Set the metadata
+        MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
+    }
+    
+}
 
 @available(iOS 13.0, *)
 extension AppDelegate{

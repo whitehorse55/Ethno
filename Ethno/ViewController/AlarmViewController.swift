@@ -26,7 +26,14 @@ class AlarmViewController: ViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        delegate.preparePlayer()
+        
+        if delegate.avPlayerItem == nil
+        {
+            delegate.preparePlayer()
+        }else{
+            
+        }
+       
         getalarmtime()
     }
     
@@ -103,11 +110,12 @@ extension AlarmViewController{
         center.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
             if granted {
                 let content = UNMutableNotificationContent()
-                content.title = "Ethno"
-                content.body = "Welcome back to Ethno."
+                content.title = "Ethno FM"
+                content.body = "When the alert appears press the notification To start streaming. Keep device unmuted please."
                 content.categoryIdentifier = "alarm"
                 content.userInfo = ["userinfo": "0"]
                 content.sound = UNNotificationSound.init(named: UNNotificationSoundName.init("alarm.mp3"))
+//                content.sound = UNNotificationSound.default
 
                var dateComponents = DateComponents()
                dateComponents.hour = alarmhour

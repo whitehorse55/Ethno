@@ -25,6 +25,8 @@ class OpenMicViewController: ViewController, MFMailComposeViewControllerDelegate
     var isrecording = false
     let mailComposer = MFMailComposeViewController()
     var isplaying = false
+    let delegate = UIApplication.shared.delegate as! AppDelegate
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         mailComposer.mailComposeDelegate = self
@@ -33,6 +35,15 @@ class OpenMicViewController: ViewController, MFMailComposeViewControllerDelegate
         initaudio()
         recordbutton.setBackgroundImage(UIImage(named: "openrecord_inactive"), for: .normal)
         enablerecordview()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+//         delegate.avPlayer.pause()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        audioPlayer = nil
+        delegate.avPlayer.play()
     }
      
     func enablerecordview(){
@@ -81,7 +92,7 @@ class OpenMicViewController: ViewController, MFMailComposeViewControllerDelegate
                 print("Can send email.")
                 //Set the subject and message of the email
                 mailComposer.setSubject("Voice Note")
-                mailComposer.setMessageBody("Voice test. could you check your inbox?", isHTML: false)
+                mailComposer.setMessageBody("Please check the voice.", isHTML: false)
                 mailComposer.setToRecipients(["Afishadeveloper@gmail.com"])
 
                 if let docsDir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as? String {
@@ -122,6 +133,9 @@ extension OpenMicViewController : AVAudioRecorderDelegate
 {
     
     @IBAction func onclickrecordbutton(_ sender: Any) {
+        
+         playbutton.setImage(UIImage(named: "play_red"), for: .normal)
+           
            if isrecording == false {
                 isrecording = true
                 recordbutton.setBackgroundImage(UIImage(named: "openrecord_active"), for: .normal)
@@ -181,17 +195,6 @@ extension OpenMicViewController : AVAudioPlayerDelegate{
     
     @IBAction func onclickplaybutton(_ sender: Any) {
         preparePlayer()
-        if(isplaying)
-        {
-            isplaying = false
-            playbutton.setImage(UIImage(named: "play_red"), for: .normal)
-            audioPlayer.pause()
-        }else{
-            isplaying = true
-            playbutton.setImage(UIImage(named: "pause_red"), for: .normal)
-            audioPlayer.play()
-        }
-        
     }
     
     
@@ -203,12 +206,35 @@ extension OpenMicViewController : AVAudioPlayerDelegate{
             error = error1
             audioPlayer = nil
         }
-            if let err = error {
+        if let err = error {
                 print("AVAudioPlayer error: \(err.localizedDescription)")
         } else {
             audioPlayer.delegate = self
             audioPlayer.prepareToPlay()
-            audioPlayer.volume = 10.0
+            audioPlayer.volume = 10
+            playrecord()
+        }
+    }
+    
+    private func playrecord()
+    {
+        delegate.avPlayer.pause()
+        if(isplaying)
+        {
+            isplaying = false
+            playbutton.setImage(UIImage(named: "play_red"), for: .normal)
+            audioPlayer.pause()
+        }else{
+            isplaying = true
+            playbutton.setImage(UIImage(named: "pause_red"), for: .normal)
+            audioPlayer.play()
+        }
+    }
+    
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        if flag == true
+        {
+            playbutton.setImage(UIImage(named: "play_red"), for: .normal)
         }
     }
 }
