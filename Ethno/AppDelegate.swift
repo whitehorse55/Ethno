@@ -22,9 +22,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var avPlayer:AVPlayer = AVPlayer()
     var avPlayerItem:AVPlayerItem?
     
+    
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        
         avPlayer.allowsExternalPlayback = true
+        
         self.setupRemoteTransportControls()
         self.setupNowPlaying()
         
@@ -34,9 +38,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             // Fallback on earlier versions
         }
-        
-        
-        
+                
+        let sharedApplication = UIApplication.shared
+        sharedApplication.delegate?.window??.tintColor = .white
+
         if UserDefaults.standard.isKeyPresentInUserDefaults(key: UserDefaultKeys.temperature.rawValue)
         {
             
@@ -119,8 +124,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let rc = event!.subtype
         print("does this work? \(rc.rawValue)")
     }
-    
+
 }
+
+
+
 
 extension AppDelegate : SideMenuControllerDelegate{
     

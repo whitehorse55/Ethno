@@ -21,8 +21,8 @@ class Cell_Advertise: UICollectionViewCell {
        override init(frame: CGRect) {
            super.init(frame: frame)
            
-           contentView.layer.cornerRadius = 10.0
-           contentView.layer.masksToBounds = true
+//           contentView.layer.cornerRadius = 10.0
+//           contentView.layer.masksToBounds = true
            contentView.backgroundColor = .clear
            contentView.addSubview(backgroundimage)
        }

@@ -9,8 +9,7 @@
 import Foundation
 import UIKit
 import Alamofire
-import Realm
-import RealmSwift
+
 
 class DataManager {
     static let datamanger = DataManager()
@@ -52,40 +51,3 @@ class DataManager {
     }
 }
 
-
-extension DataManager{
-    
-    public func savealarmdata(alarmhour : String, alarmmin : String, status : Bool){
-        let alarmmodel = Alarm()
-        alarmmodel.alarm_hour = alarmhour
-        alarmmodel.alarm_min = alarmmin
-        alarmmodel.alarm_status = status
-        
-        let realm = try! Realm()
-        let myalarm = realm.objects(Alarm.self).filter("alarm_hour == %@ AND alarm_min == %@", alarmhour, alarmmin).first
-        
-        if let myalarm = myalarm
-        {
-            try! realm.write {
-                myalarm.alarm_status = status
-            }
-            
-        }else{
-            try! realm.write {
-                realm.add(alarmmodel)
-            }
-        }
-    }
-    
-    public func getalarmdata() -> Results<Alarm>{
-        let realm = try! Realm()
-        return realm.objects(Alarm.self).sorted(byKeyPath: "alarm_hour", ascending: false)
-    }
-    
-    public func deletealarmdata(alarminfo : Alarm){
-         let realm = try! Realm()
-        try! realm.write {
-            realm.delete(alarminfo)
-        }
-    }
-}

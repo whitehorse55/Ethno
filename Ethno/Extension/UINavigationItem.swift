@@ -35,18 +35,20 @@ extension UINavigationController {
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
 
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: 70, height: 70))
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: 40, height:40))
         view.addSubview(imageView)
+        view.translatesAutoresizingMaskIntoConstraints = false
 
         navItem.titleView = view
         imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        imageView.heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
+        imageView.heightAnchor.constraint(equalTo: view.heightAnchor, constant: -10).isActive = true
         imageView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
-        imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20.0).isActive = true
+//        imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 10.0).isActive = true
 
         view.heightAnchor.constraint(equalTo: navigationBar.heightAnchor).isActive = true
         view.centerXAnchor.constraint(equalTo: navigationBar.centerXAnchor).isActive = true
         view.centerYAnchor.constraint(equalTo: navigationBar.centerYAnchor).isActive = true
+        view.topAnchor.constraint(equalTo: navigationBar.topAnchor, constant: 0).isActive = true
     }
 }

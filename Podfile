@@ -11,7 +11,7 @@ target 'Ethno' do
   pod 'Alamofire'
   pod 'IQKeyboardManagerSwift'
   pod 'HSCycleGalleryView'
-  pod 'RealmSwift'
+#  pod 'RealmSwift'
   pod 'OneSignal', '>= 2.6.2', '< 3.0'
   pod 'FSCalendar'
   

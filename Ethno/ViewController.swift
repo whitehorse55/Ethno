@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-   
+       
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -19,22 +19,25 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+    }
 
     public func setnavigationbuttons()
     {
-            self.navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
-            self.navigationController!.navigationBar.shadowImage = UIImage()
-            self.navigationController!.navigationBar.isTranslucent = true
-            
-           let barButtonItem_call = UIBarButtonItem.itemWith(colorfulImage: UIImage(named: "calltostudio") , target:  self, action:  #selector(onclickbarbuttons), tag: 0)
-           let barButtonItem_sms = UIBarButtonItem.itemWith(colorfulImage: UIImage(named: "sms"), target:  self ,action:  #selector(onclickbarbuttons), tag: 1)
-           let barButtonItem_mic = UIBarButtonItem.itemWith(colorfulImage: UIImage(named: "openmic"), target:  self, action:  #selector(onclickbarbuttons), tag: 2)
-           
-           let space = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
-           space.width = 20.0
-           
-           self.navigationController?.addLogoImage(image: UIImage(named: "logo")!, navItem: self.navigationItem)
-           navigationItem.rightBarButtonItems = [barButtonItem_call, space, barButtonItem_sms, space, barButtonItem_mic]
+        self.navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController!.navigationBar.shadowImage = UIImage()
+        self.navigationController!.navigationBar.isTranslucent = true
+        self.navigationController?.navigationBar.tintColor = .white
+       let barButtonItem_call = UIBarButtonItem.itemWith(colorfulImage: UIImage(named: "calltostudio") , target:  self, action:  #selector(onclickbarbuttons), tag: 0)
+       let barButtonItem_sms = UIBarButtonItem.itemWith(colorfulImage: UIImage(named: "sms"), target:  self ,action:  #selector(onclickbarbuttons), tag: 1)
+       let barButtonItem_mic = UIBarButtonItem.itemWith(colorfulImage: UIImage(named: "openmic"), target:  self, action:  #selector(onclickbarbuttons), tag: 2)
+       
+       let space = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+       space.width = 20.0
+       
+       self.navigationController?.addLogoImage(image: UIImage(named: "logo")!, navItem: self.navigationItem)
+       navigationItem.rightBarButtonItems = [barButtonItem_call, space, barButtonItem_sms, space, barButtonItem_mic]
      }
     
     

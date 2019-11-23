@@ -15,12 +15,14 @@ import AVKit
 
 
 class MainViewController: ViewController {
-    var backimgs = ["slider","slider1","slider2","slider3"]
+    var backimgs = ["slider1","slider2","slider3"]
     
     var webView: WKWebView!
     var avPlayerItem:AVPlayerItem?
     var isplaying : Bool!
     var timer = Timer()
+    
+    var imageview : UIImageView!
     
     @IBOutlet weak var view_player: UIView!
     @IBOutlet weak var videoview: UIView!
@@ -28,26 +30,24 @@ class MainViewController: ViewController {
     @IBOutlet weak var tbl_anomunce: UITableView!
     @IBOutlet weak var scrollview: UIScrollView!
     @IBOutlet weak var slider_volume: UISlider!
-//    @IBOutlet weak var clocklabel: UILabel!
+    //    @IBOutlet weak var clocklabel: UILabel!
     
     let delegate = UIApplication.shared.delegate as! AppDelegate
-   
+    
     var array_announcement  = [Model_Announcements]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-          isplaying = true
-        delegate.preparePlayer()
-        self.navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController!.navigationBar.shadowImage = UIImage()
-        self.navigationController!.navigationBar.isTranslucent = true
-    
         setnavigationbuttons()
+        isplaying = true
+        delegate.preparePlayer()
         showwebview()
         inittableview()
         
     }
     
+   
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         if delegate.avPlayerItem == nil
@@ -59,7 +59,7 @@ class MainViewController: ViewController {
         }
         setpagerview()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -87,15 +87,15 @@ extension MainViewController : HSCycleGalleryViewDelegate{
     }
     
     func cycleGalleryView(_ cycleGalleryView: HSCycleGalleryView, cellForItemAtIndex index: Int) -> UICollectionViewCell {
-         let cell = cycleGalleryView.dequeueReusableCell(withIdentifier: "cell_advertise", for: IndexPath(item: index, section: 0)) as! Cell_Advertise
+        let cell = cycleGalleryView.dequeueReusableCell(withIdentifier: "cell_advertise", for: IndexPath(item: index, section: 0)) as! Cell_Advertise
         cell.backgroundimage.image = UIImage(named: backimgs[index])
         print("indexinof", index)
         return cell
     }
     
     private func setpagerview(){
-        let pager = HSCycleGalleryView(frame: CGRect(x: 0, y: 10
-            , width: UIScreen.main.bounds.width, height: 250))
+        let pager = HSCycleGalleryView(frame: CGRect(x: 0, y: 0
+            , width: UIScreen.main.bounds.width, height: 200))
         pager.register(cellClass: Cell_Advertise.self, forCellReuseIdentifier: "cell_advertise")
         pager.delegate = self
         self.scrollview.addSubview(pager)
@@ -106,30 +106,47 @@ extension MainViewController : HSCycleGalleryViewDelegate{
 
 
 extension MainViewController :  AVAudioPlayerDelegate , WKNavigationDelegate{
-   
-    private func showwebview()
-    {
-       webView = WKWebView(frame: self.videoview.bounds, configuration: WKWebViewConfiguration())
-       webView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-       self.webView.navigationDelegate = self
-       self.videoview.addSubview(webView)
-       let myURL = URL(string: "http://209.222.98.195:82/stream.html")
-       let myRequest = URLRequest(url: myURL!)
-       webView.allowsBackForwardNavigationGestures = true
-       webView.load(myRequest)
-    }
+    
 
     
+    private func showwebview()
+    {
+       
+        webView = WKWebView(frame: self.videoview.bounds, configuration: WKWebViewConfiguration())
+        
+//        imageview = UIImageView(frame: CGRect(x: 0, y: 0, width: self.videoview.frame.width, height: self.videoview.frame.height))
+//        imageview.image = UIImage(named: "livestreaming")
+//        imageview.contentMode = .scaleAspectFit
+        
+        webView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.webView.navigationDelegate = self
+        webView.isOpaque = false
+        
+        self.videoview.addSubview(webView)
+//        self.videoview.addSubview(imageview)
+        
+        let myURL = URL(string: "http://209.222.98.195:82/stream.html")
+        let myRequest = URLRequest(url: myURL!)
+        webView.allowsBackForwardNavigationGestures = true
+        webView.load(myRequest)
+    }
+    
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+//        imageview.isHidden = true
+    }
+    
+    
     @IBAction func onclickplaybutton(_ sender: Any) {
-           if(isplaying){
+        if(isplaying){
             delegate.avPlayer.pause()
             self.isplaying = false
             btn_play.setImage(UIImage(named: "play"), for: .normal)
-           }else{
+        }else{
             delegate.avPlayer.play()
-               self.isplaying = true
-               btn_play.setImage(UIImage(named: "pause"), for: .normal)
-           }
+            self.isplaying = true
+            btn_play.setImage(UIImage(named: "pause"), for: .normal)
+        }
     }
     
 }
@@ -149,7 +166,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource{
             self.array_announcement = data
             self.tbl_anomunce.reloadData()
         }) { (error) in
-//            self.showToast(message: "Data not existed", font: UIFont(name: "system", size: 16)!)
+            //            self.showToast(message: "Data not existed", font: UIFont(name: "system", size: 16)!)
         }
     }
     
@@ -167,7 +184,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource{
         return cell
     }
     
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let model  = array_announcement[indexPath.row]
         gotowebpage(urlinfo: model.link)

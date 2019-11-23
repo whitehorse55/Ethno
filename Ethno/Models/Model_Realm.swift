@@ -7,10 +7,10 @@
 //
 
 import Foundation
-import RealmSwift
-
-class Alarm : Object {
-    @objc dynamic var alarm_hour = ""
-    @objc dynamic var alarm_min = ""
-    @objc dynamic var alarm_status = false
-}
+//import RealmSwift
+//
+//class Alarm : Object {
+//    @objc dynamic var alarm_hour = ""
+//    @objc dynamic var alarm_min = ""
+//    @objc dynamic var alarm_status = false
+//}

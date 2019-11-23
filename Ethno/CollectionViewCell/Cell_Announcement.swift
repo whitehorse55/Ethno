@@ -34,13 +34,13 @@ class Cell_Announcement: UITableViewCell {
     
     override func prepareForReuse() {
         self.lb_title.text = ""
-        self.lb_description.text = ""
+        self.lb_description.text = ""   
         self.img_announce.image = UIImage(named: "announce")
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0))
     }
     
 }
